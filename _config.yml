@@ -1,0 +1,13 @@
+# Site settings
+title: Nova | Grow your email revenue 300%
+email: will@nova.ai
+description: > # this means to ignore newlines until "baseurl:"
+  Grow your email revenue by 300%. Nova's Content Intelligence Engine enhances your existing email messaging to 
+  engage customers and prospects at a significantly higher rate.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://nova.ai" # the base hostname & protocol for your site
+twitter_username: novaai
+github_username:  novaai
+
+# Build settings
+markdown: kramdown
