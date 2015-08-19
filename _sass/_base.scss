@@ -242,3 +242,13 @@ hr {     border: 0;
     margin: 0 auto;
     text-align: center;
 }
+.recipient-name {
+    font-weight: 600;
+    margin-bottom: 0
+
+}
+.msg-highlight {
+    background-color: rgba(0, 180, 255, 0.25); 
+    border-bottom: 2px solid rgba(0, 180, 255, 0.5);
+    padding: 2px
+}
