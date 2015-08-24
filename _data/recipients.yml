@@ -1,0 +1,24 @@
+- firstname: Patrick
+  lastname: Castro
+  title: Benefits Administrator
+  company: KCR
+  image: /img/hero/u_patrick.png
+  personalization: Nova generates personalized details about your contacts based on available information.
+  subject: Better employee comms
+
+- firstname: Lindsey
+  lastname: Kelly
+  title: VP of HR
+  company: LoudSound
+  image: /img/hero/u_lindsey.png
+  personalization: Nova does... 
+  subject: Your volunteer work with Hands On Bay Area
+
+- firstname: Shirley
+  lastname: Howell
+  title: Director of Talent
+  company: OldRelic
+  image: /img/hero/u_shirley.png
+  personalization: Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinal!
+  subject: Fellow Stanford grad
+

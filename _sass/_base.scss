@@ -213,42 +213,249 @@ pre {
     padding: 13px 10px;
     text-transform: uppercase;
     font-weight: bold;
+    cursor: pointer; 
 }
 
-body { background-color: #F5F5F5; }
-.wrapper { max-width: 1200px; }
-.home { background-color: #FFF;  }
+body { background-color: #fff; }
+.wrapper { max-width: 100vw; }
+.home {  }
 .stack { background-image: url("/img/stack.png")}
 
-.splash { background-color: #fff; max-width: 800px; padding: 2rem;  margin: 0 auto; }
-#value-prop { font-size: 2rem; font-weight: 400; text-align: center; }
+.splash { max-width: 900px; padding: 2rem;  margin: 0 auto;}
+#value-prop-2 { color: white; font-family: Lato; font-size: 2.5rem; font-weight: 400; text-align: left; }
 #value-prop-explained { 
     color: rgba(128,128,128,0.75);
-    font-size: 1rem; font-weight: 100; text-align: center; }
+    font-family: Lato;
+    font-size: 1.4rem; font-weight: 100; text-align: center; }
+#value-prop-explained-2 { 
+    color: rgba(230,230,230,1);
+    font-family: Lato;
+    font-size: 1.1rem; font-weight: 300; text-align: left; width: 66%}
 .center { text-align: center; }
 
 .spacer {margin: 1rem; }
 .subject { font-weight: 600;}
 hr {     border: 0;
-    height: 0.5px;
+    height: 1px;
     background-color: rgba(128,128,128,0.25);
     margin-bottom: 1rem;
 }
 
 .recipient-photo {
     border-radius: 50%;
+    border: 2px solid #00B4FF; 
     height: 72px;
     width: 72px;
     margin: 0 auto;
     text-align: center;
 }
 .recipient-name {
-    font-weight: 600;
-    margin-bottom: 0
+    font-weight: 400;
+    margin-bottom: 0;
 
 }
+.recipient-title {
+    text-transform: uppercase; font-size: 0.85rem; font-weight: bold; color: rgba(128,128,128,0.75); line-height: 1rem
+}
+
 .msg-highlight {
-    background-color: rgba(0, 180, 255, 0.25); 
-    border-bottom: 2px solid rgba(0, 180, 255, 0.5);
-    padding: 2px
+    animation: all 0.2s ease-out; 
+    border: 1px solid $blue-primary_lighten;
+    margin-bottom: 15px;
+    padding: 10px;
+
+    &:hover {
+        border-color: $blue-primary;
+    }
+
+    &::after {
+        content: "Personalization";
+        display: block;
+        text-align: right;
+        font-size: 0.65rem;
+        font-style: normal;
+        color: $blue-primary;
+        font-weight: 300;
+        letter-spacing: .5px;
+    }
+}
+.msg-timestamp {
+    float: right; font-weight: 300; 
+    color: $grey-secondary;
+}
+.wrapper-header { background-color: #fff;  }
+.wrapper-content {background-color: #D8D8D8}
+
+div.email:last-child {
+    margin-bottom: 2rem;
+}
+
+// TYPE
+h1.header { 
+    font-family: Lato, Helvetica Neue, Helvetica, Arial; 
+    font-size: 3rem; 
+    font-weight: 300; 
+    margin: 0; 
+
+    @include media-query($on-palm) {
+        font-size: 2rem; 
+        font-weight: 300; 
+        line-height: 2rem; 
+        margin-bottom: 1rem; 
+    }
+}
+h2.subheader {
+    font-family: Lato, Helvetica Neue, Arial;
+    font-size: 1.4rem; 
+    font-weight: 200; 
+
+    @include media-query($on-palm) {
+        font-size: 1.1rem; 
+        line-height: 1.4rem; 
+    }
+}
+
+._fw-100 { font-weight: 100; }
+
+.header_dark { color: $grey-primary; }
+.subheader_dark { color: $grey-secondary; }
+.header_light { color: $white; }
+.subheader_light { color: $white; }
+
+// HEADER
+.wrapper-header { max-width: $content-width;}
+
+.site-nav_waitlist { float: right; line-height: 71px;  }
+
+.btn-primary {
+    background-color: $blue-primary;
+    color: $white;
+    border: none;
+    font-size: 0.75rem;
+    padding: 13px 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+// HERO SECTION
+.wrapper-hero { 
+    background-color: $grey-tertiary;  
+    // background-image: url("https://unsplash.imgix.net/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
+    background-image: url("/img/bg.png");
+    background-position-y: 30%;
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.wrapper-example        { background-color: $blue-primary; }
+.wrapper-testimonials   { background-color: $white; }
+.section { 
+    margin: 0 auto;
+    max-width: 960px; 
+    padding: 4rem;
+}
+.section-hero { padding: 2rem; }
+
+.message {
+    background-color: $white; 
+    /* @kian: removed the shadows behind the messages for now. */
+    // box-shadow: 
+    //     11px 11px 0 $blue-secondary, 
+    //     24px 24px 0 $blue-primary;
+    margin: 3rem 0;
+
+    @include media-query($on-palm) {
+        box-shadow: none;
+    } 
+}
+.message-header { 
+    background-color: $grey-tertiary; 
+    padding: 1rem 2rem; 
+    & p { margin: 0; }
+}
+
+.img-sender { 
+    float: left; 
+    margin-right: 1rem; 
+
+    height: 48px; 
+    width: 48px;
+}
+.img-round { border-radius: 50%; }
+
+.msg { font-family: Lato; }
+.message-from { 
+    color: $grey-primary; font-weight: 400;
+
+    @include media-query($on-palm) {
+        font-size: 0.85rem;
+    } 
+}
+.message-see { 
+    color: $blue-primary; 
+    float: right; 
+    font-size: 0.85rem; 
+    font-weight: 400; 
+}
+.message-to { 
+    color: $grey-primary; 
+
+    @include media-query($on-palm) {
+        font-size: 0.85rem;
+    } 
+}
+
+.message-body { 
+    display: flex; 
+    // height: 325px; 
+    overflow: scroll;
+
+    &::after{
+        background: linear-gradient(180deg, $transparent, $white);
+        bottom: 0;
+        content: "";
+        height: 15%;
+        position: absolute; 
+        width: 100%; 
+    }
+
+    @include media-query($on-palm) {
+        flex-direction: column-reverse; 
+
+    }
+}
+.message-subject { display: inline-block; font-size: 1rem; font-weight: 500; }
+.message-text  { flex: 4; padding: 1rem 3rem; }
+.message-recipient { 
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    
+    flex: 1; 
+    padding: 1rem 2rem; 
+    & p { margin: 0; }
+
+    & .message-recipient-name { color: $grey-primary; font-size: 1.1rem; font-weight: 400; }
+    & .message-recipient-title { color: $grey-secondary; font-size: 0.9rem; }
+    & .img-personalization { margin: 1rem auto 0; max-width: 50%; }
+    & .img-recipient { 
+        border: 2px solid $blue-primary;
+        margin: 0 auto; 
+
+        height: 72px; 
+        width: 72px; 
+    }
+
+}
+
+.screenshot {
+    background-image: url("/img/screenshot.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    margin-top: 2rem; 
+    margin-bottom: 2rem;
+    min-height: 500px; 
+
+
 }
