@@ -28,14 +28,14 @@ title: Nova
               Sent at 8:35am
             </span>
             <hr>
-            <div id="ttip-location" class="msg-highlight">
+            <div id="ttip-location" class="msg-highlight ttip">
               <p class="_no-margin-bottom">
               Hey, I see that you used to live in Long Beach. Southern California is really a beautiful area. Did you ever go to see the Queen Mary? 
               <!-- <span class="msg-highlight tooltip" title="Nova is... ">Hey, I see that you used to live in Long Beach, Southern California is really a beautiful area. Did you ever go to see the Queen Mary? </span> -->
               </p>
             </div>
             <p>
-              My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. 
+              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
             </p>
             <p>
               We think that a forward thinking organization like KCR would be a great candidate to get early access and provide valuable feedback.
@@ -70,7 +70,7 @@ title: Nova
 
         <div class="message-body">
           <div class="message-text">
-            <p id="ttip-subject" class="message-subject msg-highlight">Subject: Your volunteer work with Hands On Bay Area</p>
+            <p id="ttip-subject" class="message-subject msg-highlight ttip">Subject: Your volunteer work with Hands On Bay Area</p>
             <span class="msg-timestamp"> 
               Sent at 10:07am
             </span>
@@ -79,7 +79,7 @@ title: Nova
               Congrats on your volunteer work with Hands On Bay Area! Do you still work with the organization? Great to see people doing good work to help out the community here.
             </p>
             <p>
-              My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. 
+              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
             </p>
             <p>
               We think that a forward thinking organization like LoudSound would be a great candidate to get early access and provide valuable feedback.
@@ -115,7 +115,7 @@ title: Nova
         <div class="message-body">
           <div class="message-text">
             <p class="message-subject">Subject: Fellow Stanford grad</p>
-            <span id="ttip-timestamp" class="msg-timestamp msg-highlight"> 
+            <span id="ttip-timestamp" class="msg-timestamp msg-highlight ttip"> 
               Sent at 4:15pm
             </span>
             <hr>
@@ -123,7 +123,7 @@ title: Nova
               Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinals!
             </p>
             <p>
-              My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. 
+              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
             </p>
             <p>
               We think that a forward thinking organization like Loud Sound would be a great candidate to get early access and provide valuable feedback.
@@ -317,21 +317,53 @@ Quisque tristique semper ornare. Fusce id mi nec augue scelerisque eleifend. Ut 
 <script>
 $(document).ready(function() {
     $('#ttip-location').tooltipster({
-        content: $('<p>Nova digitally researches each of your recipients and crafts an individualized, custom introdutory paragraph that is guaranteed to get engagement.</p>'),
+        content: $('<p>Nova crafts custom introductory paragraphs for each of your recipients.</p>'),
+        multiple: true, 
     });
 
     $('#ttip-subject').tooltipster({
-        content: $('<p>Nova creates individualized, custom subject lines for each recipient that will drive engagement with your message.</p>'),
+        content: $('<p>Nova creates individualized subject lines that get opens.</p>'),
+        multiple: true, 
     });
 
     $('#ttip-timestamp').tooltipster({
         content: $('<p>Nova knows when each of your recipients are active and sends your emails at the best possible time.</p>'),
+        multiple: true, 
     });
 });
 </script>
 
 <script>
+$('.wrapper-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+  switch (currentSlide) {
+    case 0: 
+      $('#ttip-location').tooltipster('hide');
+      break;
+    case 1: 
+      $('#ttip-subject').tooltipster('hide');
+      break;
+    case 2: 
+      $('#ttip-timestamp').tooltipster('hide');
+      break;
+  }
+});
+
+$('.wrapper-slick').on('afterChange', function(event, slick, currentSlide, nextSlide){
+  switch (currentSlide) {
+    case 0: 
+      $('#ttip-location').tooltipster('show');
+      break;
+    case 1: 
+      $('#ttip-subject').tooltipster('show');
+      break;
+    case 2: 
+      $('#ttip-timestamp').tooltipster('show');
+      break;
+  }
+});
+        
+
   $(window).load(function() {
-    $("#ttip-location").delay(10000).tooltipster('show');
+    $("#ttip-location").tooltipster('show');
   });
 </script>
