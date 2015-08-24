@@ -1,21 +1,26 @@
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
-	background: #00B4FF;
+	background: rgba(0,180,255,0.85);
 	color: #fff;
 	font-family: Lato;
 	font-size: 1rem;
-	width: 50%;
+	width: 50px;
 	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+	text-align: center;
 }
 
 /* Use this next selector to style things like font-size and line-height: */
 .tooltipster-default .tooltipster-content {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	line-height: 16px;
-	padding: 1rem 2rem;
-	width: 100;
+	font-family: Lato, Helvetica Neue, Arial, sans-serif;
+	font-size: 1rem;
+	line-height: 1.05rem;
+	margin: 0;
+	padding: 1.5rem 1rem;
 	overflow: hidden;
+}
+
+.tooltipster-default .tooltipster-content p {
+	margin: 0;
 }
 
 /* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
@@ -47,7 +52,7 @@
 	top: 0;
 	z-index: 9999999;
 	pointer-events: none;
-	width: auto;
+	width: 20%;
 	overflow: visible;
 }
 .tooltipster-base .tooltipster-content {
