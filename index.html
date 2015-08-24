@@ -9,13 +9,13 @@ title: Nova
     <h2 class="subheader subheader_dark _ta-center">Nova's Content Intelligence Engine enhances your existing email messaging <br> to 
     engage customers and prospects at a significantly higher rate.</h3>  
 
-    <div class="message wrapper-slick animated fadeInRight">
+    <div class="message wrapper-slick">
       <div>
         <div class="message-header">  
           <img class="img-sender img-round" src="/img/hero/u_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(1/149)</p>
+          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 1/149)</p>
           <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;">See what Sally wrote</p>
+          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
           <p class="message-to">to: Patrick Castro</p>
         </div>
 
@@ -28,7 +28,7 @@ title: Nova
               Sent at 8:35am
             </span>
             <hr>
-            <div id="toolt" class="msg-highlight tooltip">
+            <div id="ttip-location" class="msg-highlight">
               <p class="_no-margin-bottom">
               Hey, I see that you used to live in Long Beach. Southern California is really a beautiful area. Did you ever go to see the Queen Mary? 
               <!-- <span class="msg-highlight tooltip" title="Nova is... ">Hey, I see that you used to live in Long Beach, Southern California is really a beautiful area. Did you ever go to see the Queen Mary? </span> -->
@@ -62,15 +62,18 @@ title: Nova
         <div>
         <div class="message-header">  
           <img class="img-sender img-round" src="/img/hero/u_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(2/149)</p>
+          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 2/149)</p>
           <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;">See what Sally wrote</p>
+          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
           <p class="message-to">to: Lindsey Kelly</p>
         </div>
 
         <div class="message-body">
           <div class="message-text">
-            <p class="message-subject msg-highlight tooltip" title="Nova is...">Subject: Your volunteer work with Hands On Bay Area</p>
+            <p id="ttip-subject" class="message-subject msg-highlight">Subject: Your volunteer work with Hands On Bay Area</p>
+            <span class="msg-timestamp"> 
+              Sent at 10:07am
+            </span>
             <hr>
             <p>
               Congrats on your volunteer work with Hands On Bay Area! Do you still work with the organization? Great to see people doing good work to help out the community here.
@@ -103,15 +106,18 @@ title: Nova
         <div>
         <div class="message-header">  
           <img class="img-sender img-round" src="/img/hero/u_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(3/149)</p>
+          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 3/149)</p>
           <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;">See what Sally wrote</p>
+          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
           <p class="message-to">to: Shirley Howell</p>
         </div>
 
         <div class="message-body">
           <div class="message-text">
             <p class="message-subject">Subject: Fellow Stanford grad</p>
+            <span id="ttip-timestamp" class="msg-timestamp msg-highlight"> 
+              Sent at 4:15pm
+            </span>
             <hr>
             <p>
               Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinals!
@@ -133,7 +139,7 @@ title: Nova
             </p>
           </div>
           <div class="_hide-mobile message-recipient">
-            <img class="img-recipient img-round" src="/img/hero/u_lindsey.png" alt="Lindsey Kelly">
+            <img class="img-recipient img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Lindsey Kelly">
             <p class="message-recipient-name">Shirley Howell</p>
             <p class="message-recipient-title">Director of Talent</p>
             <p class="message-recipient-title">OldRelic</p>
@@ -309,7 +315,23 @@ Quisque tristique semper ornare. Fusce id mi nec augue scelerisque eleifend. Ut 
 </div>
 
 <script>
-  
+$(document).ready(function() {
+    $('#ttip-location').tooltipster({
+        content: $('<p>Nova digitally researches each of your recipients and crafts an individualized, custom introdutory paragraph that is guaranteed to get engagement.</p>'),
+    });
 
-  
+    $('#ttip-subject').tooltipster({
+        content: $('<p>Nova creates individualized, custom subject lines for each recipient that will drive engagement with your message.</p>'),
+    });
+
+    $('#ttip-timestamp').tooltipster({
+        content: $('<p>Nova knows when each of your recipients are active and sends your emails at the best possible time.</p>'),
+    });
+});
+</script>
+
+<script>
+  $(window).load(function() {
+    $("#ttip-location").delay(10000).tooltipster('show');
+  });
 </script>
