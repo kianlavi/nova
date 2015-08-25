@@ -5,6 +5,8 @@ $(document).ready(function() {
 $(document).ready(function(){
   $('.wrapper-slick').slick({
     arrows: true,
+    autoplay: true,
+    autoplaySpeed: 10000,
     dots: true,
     prevArrow: "<i class='arrow-prev fa fa-angle-left'></i>",
     nextArrow: "<i class='arrow-next fa fa-angle-right'></i>",
