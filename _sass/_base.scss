@@ -403,7 +403,13 @@ h2.subheader {
     } 
 }
 
-.message-count { color: $grey-secondary; }
+.message-count { 
+    color: $grey-secondary; 
+    float: right;
+    font-size: 0.85rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 
 .message-body { 
     display: flex; 
@@ -450,7 +456,7 @@ h2.subheader {
 
     & .message-recipient-name { color: $grey-primary; font-size: 1.1rem; font-weight: 400; }
     & .message-recipient-title { color: $grey-secondary; font-size: 0.9rem; }
-    & .img-personalization { margin: 1rem auto 0; max-width: 66%; }
+    & .img-personalization { margin: 1rem auto 0; max-width: 50%; }
     & .img-recipient { 
         border: 2px solid $blue-primary;
         margin: 0 auto; 
@@ -492,3 +498,6 @@ h2.subheader {
 
     &:hover { color: $grey-tertiary; }
 }
+
+/* @kian: This gets rid of the bug with Slick showing a focus outline on the current slide. */
+.slick-slide:focus { outline:0 }
