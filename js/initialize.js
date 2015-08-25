@@ -5,6 +5,7 @@ $(document).ready(function() {
 $(document).ready(function(){
   $('.wrapper-slick').slick({
     arrows: false,
+    infinite: false
   });
 });
 
