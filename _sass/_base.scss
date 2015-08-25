@@ -339,7 +339,7 @@ h2.subheader {
 .wrapper-hero { 
     background-color: $grey-tertiary;  
     // background-image: url("https://unsplash.imgix.net/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
-    background-image: url("{{ site.baseurl }}/img/bg.png");
+    background-image: url("/img/bg.png");
     background-position-y: 30%;
     background-size: cover; 
     background-repeat: no-repeat;
