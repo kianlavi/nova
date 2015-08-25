@@ -262,7 +262,7 @@ hr {     border: 0;
     animation: all 0.2s ease-out; 
     border: 1px solid $blue-primary_lighten;
     margin-bottom: 15px;
-    padding: 10px;
+    padding: 10px!important;
 
     &:hover {
         border-color: $blue-primary;
@@ -279,10 +279,7 @@ hr {     border: 0;
         letter-spacing: .5px;
     }
 }
-.msg-timestamp {
-    float: right; font-weight: 300; 
-    color: $grey-secondary;
-}
+
 .wrapper-header { background-color: #fff;  }
 .wrapper-content {background-color: #D8D8D8}
 
@@ -293,7 +290,7 @@ div.email:last-child {
 // TYPE
 h1.header { 
     font-family: Lato, Helvetica Neue, Helvetica, Arial; 
-    font-size: 3rem; 
+    font-size: 2rem; 
     font-weight: 300; 
     margin: 0; 
 
@@ -306,7 +303,7 @@ h1.header {
 }
 h2.subheader {
     font-family: Lato, Helvetica Neue, Arial;
-    font-size: 1.4rem; 
+    font-size: 1.25rem; 
     font-weight: 200; 
 
     @include media-query($on-palm) {
@@ -342,7 +339,7 @@ h2.subheader {
 .wrapper-hero { 
     background-color: $grey-tertiary;  
     // background-image: url("https://unsplash.imgix.net/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
-    background-image: url("/img/bg.png");
+    background-image: url("/img/bg3.png");
     background-position-y: 30%;
     background-size: cover; 
     background-repeat: no-repeat;
@@ -362,7 +359,7 @@ h2.subheader {
     // box-shadow: 
     //     11px 11px 0 $blue-secondary, 
     //     24px 24px 0 $blue-primary;
-    margin: 3rem 0;
+    margin: 3rem 0 2rem;
 
     @include media-query($on-palm) {
         box-shadow: none;
@@ -409,22 +406,37 @@ h2.subheader {
     display: flex; 
     // height: 325px; 
     overflow: scroll;
-
-    &::after{
-        background: linear-gradient(180deg, $transparent, $white);
-        bottom: 0;
-        content: "";
-        height: 15%;
-        position: absolute; 
-        width: 100%; 
-    }
+    
+    /* @kian: hid the after-gradient since the message has been shortened. */
+    // &::after{
+    //     background: linear-gradient(180deg, $transparent, $white);
+    //     bottom: 0;
+    //     content: "";
+    //     height: 15%;
+    //     position: absolute; 
+    //     width: 100%; 
+    // }
 
     @include media-query($on-palm) {
         flex-direction: column-reverse; 
 
     }
 }
-.message-subject { display: inline-block; font-size: 1rem; font-weight: 500; }
+.message-subject-container { display: flex; flex-direction: row; }
+.message-subject { 
+    flex: 2;
+    font-size: 1rem; 
+    font-weight: 500; 
+    padding: 10px 0 0;
+}
+.message-timestamp {
+    color: $grey-secondary;
+    flex: 1;
+    font-weight: 300; 
+    text-align: right;
+    padding: 10px 0 0;
+}
+
 .message-text  { flex: 4; padding: 1rem 3rem; }
 .message-recipient { 
     display: flex; 
@@ -437,7 +449,7 @@ h2.subheader {
 
     & .message-recipient-name { color: $grey-primary; font-size: 1.1rem; font-weight: 400; }
     & .message-recipient-title { color: $grey-secondary; font-size: 0.9rem; }
-    & .img-personalization { margin: 1rem auto 0; max-width: 50%; }
+    & .img-personalization { margin: 1rem auto 0; max-width: 66%; }
     & .img-recipient { 
         border: 2px solid $blue-primary;
         margin: 0 auto; 
