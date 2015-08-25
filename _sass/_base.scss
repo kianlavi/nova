@@ -1,3 +1,6 @@
+---
+title: CSS stylesheet
+---
 /**
  * Reset some basic elements
  */
@@ -461,7 +464,7 @@ h2.subheader {
 }
 
 .screenshot {
-    background-image: url("/img/screenshot.png");
+    background-image: url("{{ site.baseurl }}/img/screenshot.png");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain; 
