@@ -344,6 +344,10 @@ $(document).ready(function() {
 </script>
 
 <script>
+$('.wrapper-slick').on('init', function(event, slick){
+  $('.arrow-prev').addClass('arrow-inactive');
+});
+
 $('.wrapper-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
   switch (currentSlide) {
     case 0: 
@@ -362,12 +366,16 @@ $('.wrapper-slick').on('afterChange', function(event, slick, currentSlide, nextS
   switch (currentSlide) {
     case 0: 
       $('#ttip-location').tooltipster('show');
+      $('.arrow-prev').addClass('arrow-inactive');
       break;
     case 1: 
       $('#ttip-subject').tooltipster('show');
+      $('.arrow-prev').removeClass('arrow-inactive');
+      $('.arrow-next').removeClass('arrow-inactive');
       break;
     case 2: 
       $('#ttip-timestamp').tooltipster('show');
+      $('.arrow-next').addClass('arrow-inactive');
       break;
   }
 });

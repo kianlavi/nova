@@ -339,7 +339,7 @@ h2.subheader {
 .wrapper-hero { 
     background-color: $grey-tertiary;  
     // background-image: url("https://unsplash.imgix.net/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
-    // background-image: url("{{ site.baseurl }}/img/bg.png");
+    background-image: url("/img/bg.png");
     background-position-y: 30%;
     background-size: cover; 
     background-repeat: no-repeat;
@@ -461,7 +461,7 @@ h2.subheader {
 }
 
 .screenshot {
-    background-image: url("{{ site.baseurl }}/img/screenshot.png");
+    background-image: url("/img/screenshot.png");
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: contain; 
@@ -470,4 +470,25 @@ h2.subheader {
     min-height: 500px; 
 
 
+}
+
+.arrow-prev, .arrow-next {
+    @include animate-this(0.2s);
+    position: absolute;
+    top: 50%; 
+    margin-top: -2rem;
+    
+    color: $grey-secondary;
+    cursor: pointer;
+    font-size: 4rem!important; 
+
+    &:hover { color: $grey-primary; }
+}
+.arrow-prev { left: -4rem; }
+.arrow-next { right: -4rem; }
+.arrow-inactive { 
+    color: $grey-tertiary; 
+    cursor: auto;
+
+    &:hover { color: $grey-tertiary; }
 }

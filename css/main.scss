@@ -77,10 +77,13 @@ $blue-primary_lighten: 	lighten($blue-primary, 30%);
 
 
 
+@mixin animate-this($speed) {
+    animation: all $speed, ease-out; 
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "syntax-highlighting",
 ;
