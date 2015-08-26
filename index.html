@@ -20,7 +20,7 @@ layout: home
         <div class="message-header">  
           <!-- This allows us to use sally.yml in _data/ to populate the sender information across all messages. -->
           {% for sally in site.data.sally %}
-          <img class="img-sender img-round" src="{{ sally.image }}" alt="{{ sally.firstname }} {{ sally.lastname }}">
+          <img class="img-sender img-round" src="{{ site.baseurl }}{{ sally.image }}" alt="{{ sally.firstname }} {{ sally.lastname }}">
           <!-- @kian: Sorry for this, it was the easiest way to cycle through numbers at the top-right of each message. -->
           <p class="message-count _hide-mobile">(Message {% cycle '1', '2', '3' %} of 149)</p> 
           <p class="message-from">from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}</p>
