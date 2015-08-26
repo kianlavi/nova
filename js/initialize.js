@@ -1,4 +1,14 @@
 $(document).ready(function() {
+  pson = $('.personalization-1');
+  subj = $('.subject-2');
+  time = $('.timestamp-3');
+
+  subj.addClass('msg-highlight').attr('id', 'ttip-subject');
+  time.addClass('msg-highlight').attr('id', 'ttip-timestamp');
+});
+
+
+$(document).ready(function() {
   $('.tooltip').tooltipster();
 });
 
