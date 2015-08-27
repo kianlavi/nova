@@ -305,8 +305,6 @@ h2.subheader {
 
 .header_dark { color: $grey-primary; }
 .subheader_dark { color: $grey-secondary; }
-.header_light { color: $white; }
-.subheader_light { color: $white; }
 
 // HEADER
 .wrapper-header { max-width: $content-width;}
@@ -372,7 +370,6 @@ h2.subheader {
     height: 48px; 
     width: 48px;
 }
-.img-round { border-radius: 50%; }
 
 .msg { font-family: Lato; }
 .message-from { 
@@ -498,6 +495,7 @@ h2.subheader {
 
 /* @kian: Makes the tooltips responsive */
 .tooltipster-base {
+    z-index: 1; 
     @include media-query($on-palm) {
         width: 50vw!important;
     }
@@ -548,9 +546,11 @@ h4 { font-size: 1.25rem; }
 
 //
 //
-.wrapper-testimonials { margin-bottom: 1rem; }
+.wrapper-testimonials-intro { margin: 3rem 0 1rem; }
+.wrapper-testimonials {  }
+
 .testimonial {
-    background-image: url('http://i.imgur.com/8iYbOgO.png');
+    background-image: url('/img/testimonials/1_bg.png');
     background-size: cover;
     border: 1px solid $white;
 
@@ -558,8 +558,41 @@ h4 { font-size: 1.25rem; }
 
     margin: 0 auto;
     min-height: 600px;
-    margin-bottom: 10rem;
     max-width: 1200px;
+
+        text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+
 }
-.testimonial-inner { position: relative; text-align: center; }
-.testimonial-user { margin-top: -3rem; }
+.testimonial-inner { padding-bottom: 3rem; position: relative; text-align: center; }
+.testimonial-logo {
+    max-width: 300px; 
+}
+.testimonial-quote { font-size: 1.5rem; margin: 2rem auto 3rem; width: 66%; }
+
+//
+
+.wrapper-cta { background-color: $grey-secondary; background-image: url("/img/bg_dark.png"); background-size: cover; }
+.section-cta { padding: 8rem 0; }
+.btn-cta { 
+    margin: 2rem 0 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+footer { background-color: $grey-primary; }
+.site-footer { border: none; padding: 1rem 0; }
+.footer-nav { align-self: center; }
+.footer-link { 
+    color: $grey-secondary; 
+    margin: 0 1rem; 
+    text-decoration: none;
+    
+    &:hover { color: $blue-primary; text-decoration: none; }
+    &:active, &:focus, &:visited { color: $grey-secondary; text-decoration: none; }
+
+}
+._width-content { max-width: $content-width; }
