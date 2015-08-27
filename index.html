@@ -20,7 +20,7 @@ layout: home
         <div class="message-header">  
           <!-- This allows us to use sally.yml in _data/ to populate the sender information across all messages. -->
           {% for sally in site.data.sally %}
-          <img class="img-sender img-round" src="{{ site.baseurl }}{{ sally.image }}" alt="{{ sally.firstname }} {{ sally.lastname }}">
+          <img class="img-sender _img-round" src="{{ site.baseurl }}{{ sally.image }}" alt="{{ sally.firstname }} {{ sally.lastname }}">
           <!-- @kian: Sorry for this, it was the easiest way to cycle through numbers at the top-right of each message. -->
           <p class="message-count _hide-mobile">(Message {% cycle '1', '2', '3' %} of 149)</p> 
           <p class="message-from">from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}</p>
@@ -61,7 +61,7 @@ layout: home
             </p>
           </div>
           <div class="_hide-mobile message-recipient">
-            <img class="img-recipient img-round" src="{{ recipient.image }}" alt="{{ recipient.firstname }} {{ recipient.lastname }}">
+            <img class="img-recipient _img-round" src="{{ recipient.image }}" alt="{{ recipient.firstname }} {{ recipient.lastname }}">
             <p class="message-recipient-name">{{ recipient.firstname }} {{ recipient.lastname }}</p>
             <p class="message-recipient-title">{{ recipient.title }}</p>
             <p class="message-recipient-title">{{ recipient.company }}</p>
@@ -79,8 +79,8 @@ layout: home
 
  <div class="wrapper wrapper-example">
   <div class="section">
-    <h1 class="header header_light _ta-center">Nova gets smarter the more you use it.</h1>
-    <h2 class="subheader subheader_light _ta-center">Nova captures every data point and utilizes machine learning to further improve the performance of your outbound emails.</h2>  
+    <h1 class="header _f-white _ta-center">Nova gets smarter the more you use it.</h1>
+    <h2 class="subheader _f-white _ta-center">Nova captures every data point and utilizes machine learning to further improve the performance of your outbound emails.</h2>  
     
     <div>
       <div class="feature">
@@ -91,7 +91,9 @@ layout: home
           <h4>Nova can personalize thousands of emails in just minutes, and can work for sending 50 or 50,000 messages per day.</h4>
         </div>
       </div>
-<hr class="feature-break">
+
+      <hr class="feature-break">
+      
       <div class="feature">
         <img class="feature-img" src="{{ site.baseurl }}/img/middle/knows-what.svg" alt="">
         <div class="feature-text">
@@ -100,7 +102,9 @@ layout: home
           <h4>Based on historical data, Nova knows exactly what messages resonate with what individuals. Nova puts this data to work to create a message that is optimized for effectiveness.</h4>
         </div>
       </div>
-<hr class="feature-break">
+
+      <hr class="feature-break">
+
       <div class="feature">
         <img class="feature-img" src="{{ site.baseurl }}/img/middle/engage-people.svg" alt="">
         <div class="feature-text">
@@ -111,126 +115,66 @@ layout: home
       </div>
     </div>
 
-
-    <!-- <div class="screenshot animated fadeInLeft"></div> -->
-    
   </div>
 </div>    
 
-<div class="wrapper wrapper-testimonials">
-  <div class="section">
-    <h1 class="header _ta-center">Trusted by companies everywhere. </h1>
-    </div>
-  </div>
+<div class="wrapper wrapper-testimonials-intro">
+  <h1 class="header _ta-center">Trusted by companies everywhere. </h1>
 </div>
 
-<div class="wrapper wrapper-testimonials">
-  <div class="testimonial">
-    <div class="testimonial-inner">
-      <div class="testimonial-user">
-        <img class="img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-        
-        <p style="
-    color: white;
-"><span style="
-    font-weight: bold;
-">Shirley Temple, </span>Customer Advocate</p>
+<div class="wrapper-slick2">
+  
+  <div>
+    <div class="wrapper wrapper-testimonials">
+      <div class="testimonial">
+        <div class="testimonial-user">
+          <img class="_margin-auto _img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
+          <p class="_f-white">
+            <span class="_f-bold">Shirley Temple, </span>Customer Advocate
+          </p>
+          <img class="testimonial-logo _margin-auto" src="http://storefront.nr-assets.net/assets/newrelic/source/NewRelic-logo-bug-clr-w.png">
+        </div>
+          
+        <p class="testimonial-quote _f-white">
+          "Nova has dramatically improved the productivity of our sales development team. Nova's product doesn't even seem possible until you see it in action, and then you wondered how you were ever doing things differently."
+        </p>
 
+        <div class="_flex _flex-row">  
+          <div class="_flex _flex-column _flex-1">
+            <img src="/img/testimonials/1_open.svg" alt="">
+          </div>
 
- 
+          <div class="_flex _flex-column _flex-1">
+            <img src="/img/testimonials/1_demo.svg" alt="">
+          </div>  
+
+          <div class="_flex _flex-column _flex-1">
+            <img src="/img/testimonials/1_response.svg" alt="">
+          </div>  
+        </div>
+
       </div>
-    <img src="http://storefront.nr-assets.net/assets/newrelic/source/NewRelic-logo-bug-clr-w.png" style="
-    width: 25%;
-    margin: 0 auto;
-    text-align: center;
-"><h3 class="subheader-light" style="
-    color: white;
-    width: 66%;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-">
-"Nova has dramatically improved the productivity of our sales development team. Nova's product doesn't even seem possible until you see it in action, and then you wondered how you were ever doing things differently."</h3>
-
-<div style="
-    display: flex;
-    flex-direction: row;
-    width: 66%;
-    margin: 0 auto;
-">
-    
-  <div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">OPEN RATE</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">46%</p>
-    <p style="
-    color: white;
-">vs 23% before Nova</p>
-    
-  </div>  
-  <div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">DEMOS PER WEEK</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">10</p>
-    <p style="
-    color: white;
-">vs 3 before Nova</p>
-    
-  </div><div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">POSITIVE RESPONSES</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">+318%</p>
-    <p style="
-    color: white;
-">vs 25% before Nova</p>
-    
-  </div>  
-  
-</div>
-</div>
+    </div>  
   </div>
-  
-  <!-- <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div>
-  <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div>
-  <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div> -->
+
+</div>
+
+
+
+<div class="wrapper wrapper-cta">
+  <div class="section section-cta _ta-center">
+    <h1 class="header _f-white">Get early access to Nova.</h1>
+    <button type="button" class="join-waitlist btn-primary btn-cta">Join the waitlist</button>
+ </div>
 </div>
 
 <script>
 $(document).ready(function() {
+    $('.btn-primary').click(function() {
+      $(".tooltipster-base").hide(); 
+      $('.wrapper-slick').slick('slickPause');
+    }); 
+
     $('#ttip-location').tooltipster({
         content: $('<p>Nova crafts custom introductory paragraphs for each of your recipients.</p>'),
         multiple: true, 
