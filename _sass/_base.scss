@@ -523,7 +523,7 @@ h2.subheader {
     padding: 0;
 
 
-    &:nth-child(2) { padding-right: 25%; }
+    &:nth-child(1) { padding-right: 25%; }
     &:nth-child(odd) { padding-left: 25%; }
     h3, h4 { color: $white; margin-bottom: 0; }
 }
