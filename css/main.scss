@@ -73,11 +73,24 @@ $blue-primary_lighten: 	lighten($blue-primary, 30%);
     } 
 }
 
-._f-white { color: $white; }
+._img-round { border-radius: 50%; }
 
+._f-white { color: $white; }
+._f-bold { font-weight: 600; }
+
+._margin-auto { margin: 0 auto; }
 ._no-margin-bottom { margin-bottom: 0; }
 
+._flex { display: flex; }
+._flex-row { flex-direction: row; }
+._flex-row-reverse { flex-direction: row-reverse; }
+._flex-column { flex-direction: column; }
+._flex-column-reverse { flex-direction: column-reverse; }
 
+._flex-1 { flex: 1; }
+._flex-2 { flex: 2; }
+._flex-3 { flex: 3; }
+._flex-4 { flex: 4; }
 
 @mixin animate-this($speed) {
     animation: all $speed, ease-out; 
