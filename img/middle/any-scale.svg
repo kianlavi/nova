@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="425px" height="448px" viewBox="0 0 425 448" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>any-scale</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="any-scale" sketch:type="MSLayerGroup">
+            <g id="Path-171-Copy-2-+-Path-171-Copy" transform="translate(133.000000, 147.000000)"></g>
+            <g id="Group">
+                <rect id="Rectangle-8" stroke="#FFFFFF" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="425" height="448"></rect>
+                <path d="M134.889044,275.099437 C133.902263,275.583951 133.885417,276.429621 134.828477,276.975025 L210.498136,320.737417 C211.451467,321.288761 213.021131,321.31027 213.980736,320.79792 L290.977933,279.687794 C291.947989,279.169865 291.952404,278.317582 290.983319,277.781691 L216.751561,236.732595 C215.784479,236.197812 214.189929,236.162282 213.213779,236.641577 L134.889044,275.099437 Z" id="Path-171-Copy-2" stroke="#FFFFFF" stroke-width="4" fill="#00B4FF" sketch:type="MSShapeGroup"></path>
+                <path d="M134.889044,232.113722 C133.902263,232.598237 133.885417,233.443907 134.828477,233.989311 L210.498136,277.751703 C211.451467,278.303047 213.021131,278.324555 213.980736,277.812206 L290.977933,236.70208 C291.947989,236.184151 291.952404,235.331867 290.983319,234.795977 L216.751561,193.746881 C215.784479,193.212098 214.189929,193.176568 213.213779,193.655863 L134.889044,232.113722 Z" id="Path-171-Copy" stroke="#FFFFFF" stroke-width="4" fill="#00B4FF" sketch:type="MSShapeGroup"></path>
+                <path d="M134.889044,186.599437 C133.902263,187.083951 133.885417,187.929621 134.828477,188.475025 L210.498136,232.237417 C211.451467,232.788761 213.021131,232.81027 213.980736,232.29792 L290.977933,191.187794 C291.947989,190.669865 291.952404,189.817582 290.983319,189.281691 L216.751561,148.232595 C215.784479,147.697812 214.189929,147.662282 213.213779,148.141577 L134.889044,186.599437 Z" id="Path-171" stroke="#FFFFFF" stroke-width="4" fill="#00B4FF" sketch:type="MSShapeGroup"></path>
+                <text id="APPROVE-&amp;-SEND" sketch:type="MSTextLayer" font-family="Lato" font-size="32" font-weight="normal" sketch:alignment="middle" fill="#00B4FF">
+                    <tspan x="80.26" y="387">APPROVE &amp; SEND</tspan>
+                </text>
+                <rect id="Rectangle-41" stroke="#00B4FF" stroke-width="4" sketch:type="MSShapeGroup" x="27" y="46" width="371" height="77.9"></rect>
+                <text id="849-MESSAGES" sketch:type="MSTextLayer" font-family="Lato" font-size="45" font-weight="bold" sketch:alignment="middle" fill="#00B4FF">
+                    <tspan x="54.4375" y="101">849 MESSAGES</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

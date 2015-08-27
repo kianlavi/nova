@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="430px" height="453px" viewBox="0 0 430 453" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>engage-people</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="52.8231454%" y1="97.3709816%" x2="52.8231442%" y2="-95.8019587%" id="linearGradient-1">
+            <stop stop-color="#00B4FF" offset="0%"></stop>
+            <stop stop-color="#115773" offset="100%"></stop>
+        </linearGradient>
+        <path d="M405.953631,380.070417 C405.941102,380.183303 405.928573,380.172014 405.916044,380.070417 L405.953631,380.070417 L405.953631,380.070417 Z M405.916044,426.424327 L190.216583,426.424327 C190.329344,426.424327 190.366931,426.153402 190.354402,425.690571 L23.9941879,425.690571 C24.3074132,425.690571 24.0067169,423.72636 24.0067169,421.299318 L24.0067169,283.530595 C25.8484816,282.86457 46.7092857,256.596075 55.6925869,254.914079 C90.9241671,248.28769 101.310718,299.08624 113.025343,308.026785 C132.094499,322.589036 134.337192,284.286929 154.283378,284.286929 C172.976663,284.286929 174.580377,254.507691 190.229112,247.644242 C192.070877,246.786311 194.113106,246.357346 196.430973,246.24446 C216.602681,245.194623 216.665326,300.869834 236.335874,301.400396 C257.397143,301.964825 257.647723,277.660541 277.593909,277.660541 C297.840792,277.660541 298.041256,225.417054 317.774449,225.417054 C338.497434,225.417054 337.808338,307.981631 357.94246,308.873427 C378.916025,309.79909 378.33969,259.203734 398.386109,259.203734 C399.185598,259.203734 400.696542,259.487798 400.696542,259.487798 C400.696542,259.487798 404.350451,261.054423 405.941102,262.601593 L405.941102,422.033075 C405.941102,423.985997 405.890986,426.00665 405.916044,426.424327 Z" id="path-2"></path>
+        <linearGradient x1="50%" y1="28.8705509%" x2="50%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" stop-opacity="0.142493207" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-7" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="engage-people" sketch:type="MSLayerGroup">
+            <g id="Rectangle-8-+-Group-Copy-4">
+                <g id="Group">
+                    <rect id="Rectangle-8" stroke="#FFFFFF" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="430" height="453"></rect>
+                    <rect id="Rectangle-8" fill="#00B4FF" sketch:type="MSShapeGroup" x="24.1403509" y="26.425" width="381.719298" height="401.66"></rect>
+                    <text id="BEST-TIME-TO-REACH-J" sketch:type="MSTextLayer" font-family="Lato" font-size="22.625387" font-weight="normal" sketch:alignment="middle" letter-spacing="1" fill="#FFFFFF">
+                        <tspan x="51.0854035" y="72.3302668">BEST TIME TO REACH JASON</tspan>
+                    </text>
+                    <text id="WED-1:24PM-PST" sketch:type="MSTextLayer" font-family="Lato" font-size="36.3157895" font-weight="bold" sketch:alignment="middle" letter-spacing="2.03999996" fill="#FFFFFF">
+                        <tspan x="54.9583336" y="143.395">WED 1:24PM PST</tspan>
+                    </text>
+                    <path d="M23.9941879,282.113541 C25.8359526,281.447515 46.6967567,255.179021 55.6800579,253.497025 C90.9116381,246.870636 101.298189,297.669186 113.012814,306.60973 C132.08197,321.171981 134.324663,282.869875 154.270849,282.869875 C172.964134,282.869875 174.567848,253.090636 190.216583,246.227188 C192.058348,245.369257 194.100577,244.940291 196.418444,244.827405 C216.590152,243.777569 216.652797,299.452779 236.323345,299.983342 C257.384613,300.54777 257.635194,276.243486 277.58138,276.243486 C297.828263,276.243486 298.028727,224 317.76192,224 C338.484905,224 337.795809,306.564576 357.929931,307.456373 C378.903496,308.382035 379.453568,259 399.499986,259 C402.36913,259 405.29488,260.855172 407.499986,263" id="Shape-Copy-3" stroke="#FFFFFF" stroke-width="2" sketch:type="MSShapeGroup"></path>
+                    <mask id="mask-3" sketch:name="Mask" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" xlink:href="#path-2"></use>
+                    <path d="M111.461137,128.511517 L111.461137,431.286759" id="Line-14-Copy" stroke="url(#linearGradient-4)" stroke-linecap="square" sketch:type="MSShapeGroup" mask="url(#mask-3)"></path>
+                    <path d="M214.182619,128.511517 L214.182619,431.286759" id="Line-14-Copy-3" stroke="url(#linearGradient-4)" stroke-linecap="square" sketch:type="MSShapeGroup" mask="url(#mask-3)"></path>
+                    <path d="M316.9041,130.782109 L316.9041,433.557352" id="Line-14-Copy-5" stroke="url(#linearGradient-4)" stroke-linecap="square" sketch:type="MSShapeGroup" mask="url(#mask-3)"></path>
+                    <text id="MON" sketch:type="MSTextLayer" mask="url(#mask-3)" font-family="Lato" font-size="9" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="118" y="423">MON</tspan>
+                    </text>
+                    <text id="TUE" sketch:type="MSTextLayer" mask="url(#mask-3)" font-family="Lato" font-size="9" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="221" y="423">TUE</tspan>
+                    </text>
+                    <text id="WED" sketch:type="MSTextLayer" mask="url(#mask-3)" font-family="Lato" font-size="9" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="324" y="423">WED</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="Rectangle-8-+-Group-Copy-3" transform="translate(24.140351, 26.425000)"></g>
+        </g>
+    </g>
+</svg>
