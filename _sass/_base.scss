@@ -502,3 +502,31 @@ h2.subheader {
         width: 50vw!important;
     }
 }
+
+.feature-img { max-height: 300px; }
+.feature {
+    display: flex;
+    flex-direction: row; 
+    padding: 3rem 0; 
+
+    &:first-child { padding-top: 5rem; }
+    &:nth-child(odd) { flex-direction: row; }
+    &:nth-child(even) { flex-direction: row-reverse; }
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 2rem;
+    justify-content: center;
+    padding: 0;
+
+
+    &:nth-child(2) { padding-right: 25%; }
+    &:nth-child(odd) { padding-left: 25%; }
+    h3, h4 { color: $white; margin-bottom: 0; }
+}
+
+h3 { font-size: 2rem; }
+h4 { font-size: 1.25rem; }
