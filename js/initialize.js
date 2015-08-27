@@ -31,6 +31,32 @@ $(document).ready(function(){
       {
       breakpoint: 480,
       settings: {
+        arrows: false,
+        }
+      }
+    ]
+  });
+});
+
+$(document).ready(function(){
+  $('.wrapper-slick2').slick({
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 10000,
+    dots: true,
+    prevArrow: "<i class='arrow-prev fa fa-angle-left'></i>",
+    nextArrow: "<i class='arrow-next fa fa-angle-right'></i>",
+    infinite: false,
+    responsive: [
+      {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        }
+      },
+      {
+      breakpoint: 480,
+      settings: {
         }
       }
     ]
