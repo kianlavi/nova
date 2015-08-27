@@ -40,13 +40,13 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   $('.wrapper-slick2').slick({
-    arrows: true,
     autoplay: true,
     autoplaySpeed: 10000,
     dots: true,
+    arrows: false,
     prevArrow: "<i class='arrow-prev fa fa-angle-left'></i>",
     nextArrow: "<i class='arrow-next fa fa-angle-right'></i>",
-    infinite: false,
+    infinite: true,
     responsive: [
       {
       breakpoint: 768,
