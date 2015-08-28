@@ -505,6 +505,7 @@ h2.subheader {
     @include media-query($on-palm) {
         max-height: 250px;      
         margin: 0 auto; 
+        text-align: center; 
     }
 }
 .feature {
