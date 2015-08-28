@@ -534,7 +534,6 @@ h2.subheader {
             flex-direction: column; 
 
             div.feature-text { margin: 2rem 0; text-align: center; }
-            img.feature-img:nth-of-type(odd), img.feature-img:nth-of-type(even) { box-shadow: none; margin: 0 auto; }
             img.feature-icon { margin: 0 auto;  }
             h4 { padding: 0; }
         }
