@@ -283,7 +283,6 @@ h1.header {
 
     @include media-query($on-palm) {
         font-size: 2rem; 
-        font-weight: 300; 
         line-height: 2rem; 
         margin-bottom: 1rem; 
     }
@@ -291,7 +290,7 @@ h1.header {
 h2.subheader {
     font-family: Lato, Helvetica Neue, Arial;
     font-size: 1.5rem; 
-    font-weight: 200; 
+    font-weight: 300; 
 
     @include media-query($on-palm) {
         font-size: 1.1rem; 
@@ -338,9 +337,11 @@ h2.subheader {
 .section { 
     margin: 0 auto;
     max-width: 960px; 
-    padding: 4rem;
+    padding: 4rem 0;
 }
-.section-hero { padding: 2rem; }
+.section-hero { 
+    padding: 2rem 0;
+}
 
 .message {
     background-color: $white; 
@@ -400,21 +401,21 @@ h2.subheader {
 
 .message-body { 
     display: flex; 
-    // height: 325px; 
-    overflow: scroll;
     
-    /* @kian: hid the after-gradient since the message has been shortened. */
-    // &::after{
-    //     background: linear-gradient(180deg, $transparent, $white);
-    //     bottom: 0;
-    //     content: "";
-    //     height: 15%;
-    //     position: absolute; 
-    //     width: 100%; 
-    // }
-
     @include media-query($on-palm) {
         flex-direction: column-reverse; 
+
+        height: 425px; 
+        overflow: scroll; 
+
+        &::after{
+        background: linear-gradient(180deg, $transparent, $white);
+        bottom: 0;
+        content: "";
+        height: 15%;
+        position: absolute; 
+        width: 100%; 
+    }
 
     }
 }
@@ -500,6 +501,10 @@ h2.subheader {
 
 .feature-img { 
     max-height: 300px; 
+
+    @include media-query($on-palm) {
+        max-height: 250px;      
+    }
 }
 .feature {
     display: flex;
@@ -520,6 +525,17 @@ h2.subheader {
         img.feature-icon { align-self: flex-end;  }
         div.feature-text { margin-right: 4rem; text-align: right; }
         h4 { padding-left: 15%; }
+    }
+
+    @include media-query($on-palm) {
+        &:nth-of-type(odd), &:nth-of-type(even) { 
+            flex-direction: column; 
+
+            div.feature-text { margin: 2rem 0; text-align: center; }
+            img.feature-img:nth-of-type(odd), img.feature-img:nth-of-type(even) { box-shadow: none; }
+            img.feature-icon { margin: 0 auto;  }
+            h4 { padding: 0; }
+        }
     }
 }
 
@@ -567,7 +583,33 @@ h4 { font-size: 1.25rem; }
 .testimonial-logo {
     max-width: 300px; 
 }
-.testimonial-quote { font-size: 1.5rem; margin: 2rem auto 3rem; width: 66%; }
+.testimonial-quote { 
+    font-size: 1.5rem; 
+    margin: 2rem auto 3rem; 
+    width: 66%; 
+
+    @include media-query($on-palm) {
+        font-size: 1rem; 
+        line-height: 1.25rem; 
+        margin: 2rem auto; 
+        padding: 0 1rem; 
+        width: initial; 
+    }
+}
+
+.testimonial-metrics-wrapper {
+    @include media-query($on-palm) {
+        flex-direction: column;
+    }
+}
+
+.testimonial-metric {
+    @include media-query($on-palm) {
+        margin: 3rem 0;
+
+        &:first-child { margin-top: 2rem; }
+    }
+}
 
 //
 
