@@ -326,12 +326,18 @@ h2.subheader {
 
 // HERO SECTION
 .wrapper-hero {  
+    align-items: center; 
     background-color: $grey-tertiary;  
-    background-image: url("../img/bg.png");
+    background-image: url("../img/bg.jpg");
     background-position-y: 30%;
     background-size: cover; 
     background-repeat: no-repeat;
+    display: flex;
+    height: 80vh; 
+    text-align: center; 
 }
+
+
 .wrapper-example        { background-color: $blue-primary; }
 
 .section { 
@@ -340,7 +346,30 @@ h2.subheader {
     padding: 4rem 0;
 }
 .section-hero { 
+    margin-top: -1rem; 
     padding: 2rem 0;
+}
+
+// HOW SECTION
+
+.wrapper-how {
+   background-image: url("../img/bg_how.jpg") 
+}
+
+.how-graphic {
+    content: " ";
+    height: 115px;
+    background-image: url("../img/how-graphic.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: contain;
+    margin: 1rem auto 3rem;
+    width: 100%;
+    
+    @include media-query($on-palm) {
+        height: 75px; 
+        margin-bottom: 1rem; 
+    }
 }
 
 .message {
@@ -349,7 +378,7 @@ h2.subheader {
     // box-shadow: 
     //     11px 11px 0 $blue-secondary, 
     //     24px 24px 0 $blue-primary;
-    margin: 3rem 0 2rem;
+    margin: 0 0 2rem;
 
     @include media-query($on-palm) {
         box-shadow: none;
@@ -472,24 +501,26 @@ h2.subheader {
     top: 50%; 
     margin-top: -2rem;
     
-    color: $grey-secondary;
+    color: $white;
     cursor: pointer;
     font-size: 4rem!important; 
 
-    &:hover { color: $grey-primary; }
+    &:hover { color: $blue-primary; }
 }
 .arrow-prev { left: -4rem; }
 .arrow-next { right: -4rem; }
 .arrow-inactive { 
-    color: $grey-tertiary; 
+    color: $white; 
     cursor: auto;
+    opacity: 0.2;
 
-    &:hover { color: $grey-tertiary; }
+    &:hover { color: $white; opacity: 0.2; }
 }
 
 /* @kian: This gets rid of the bug with Slick showing a focus outline on the current slide. */
 .slick-slide:focus { outline:0;  }
 .slick-dots { margin-left: 0; }
+.slick-dots li.slick-active button:before { color: $white; }
 
 /* @kian: Makes the tooltips responsive */
 .tooltipster-base {
@@ -624,6 +655,7 @@ h4 { font-size: 1.25rem; }
     font-size: 1rem;
     font-weight: 600;
 }
+.btn-hero { margin: 1rem 0; }
 
 footer { background-color: $grey-primary; }
 .site-footer { border: none; padding: 1rem 0; }
