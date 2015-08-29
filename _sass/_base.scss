@@ -326,13 +326,13 @@ h2.subheader {
 
 // HERO SECTION
 .wrapper-hero {  
-    align-items: center; 
+    align-items: center;  -webkit-align-items: center; 
     background-color: $grey-tertiary;  
     background-image: url("../img/bg.jpg");
     background-position-y: 30%;
     background-size: cover; 
     background-repeat: no-repeat;
-    display: flex;
+    display: flex; display: -webkit-flex;
     height: 80vh; 
     text-align: center; 
 }
@@ -429,13 +429,13 @@ h2.subheader {
 }
 
 .message-body { 
-    display: flex; 
+    display: flex; display: -webkit-flex; 
     
     @include media-query($on-palm) {
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;  -webkit-flex-direction: column-reverse;  
 
         height: 425px; 
-        overflow: scroll; 
+        overflow: hidden; 
 
         &::after{
         background: linear-gradient(180deg, $transparent, $white);
@@ -448,7 +448,7 @@ h2.subheader {
 
     }
 }
-.message-subject-container { display: flex; flex-direction: row; justify-content: space-between; }
+.message-subject-container { display: flex; display: -webkit-flex; flex-direction: row; -webkit-flex-direction: row;  justify-content: space-between; -webkit-justify-content: space-between;}
 .message-subject { 
     font-size: 1rem; 
     font-weight: 500; 
@@ -463,8 +463,8 @@ h2.subheader {
 
 .message-text  { flex: 4; padding: 1rem 3rem; }
 .message-recipient { 
-    display: flex; 
-    flex-direction: column; 
+    display: flex; display: -webkit-flex; 
+    flex-direction: column;  -webkit-flex-direction: column; 
     text-align: center; 
     
     flex: 1; 
@@ -538,29 +538,29 @@ h2.subheader {
     }
 }
 .feature {
-    display: flex;
+    display: flex; display: -webkit-flex;
     padding: 3rem 0; 
 
     &:first-child { padding-top: 5rem; }
     &:nth-of-type(odd) { 
-        flex-direction: row; 
+        flex-direction: row; -webkit-flex-direction: row;  
     
         img.feature-img { box-shadow: -15px 15px 1px rgba($black, 0.2) }
         div.feature-text { margin-left: 4rem; text-align: left; }
         h4 { padding-right: 15%; }
     }
     &:nth-of-type(even) { 
-        flex-direction: row-reverse; 
+        flex-direction: row-reverse; -webkit-flex-direction: row-reverse; 
 
         img.feature-img { box-shadow: 15px 15px 1px rgba($black, 0.2); }
-        img.feature-icon { align-self: flex-end;  }
+        img.feature-icon { align-self: flex-end; -webkit-align-self: flex-end;  }
         div.feature-text { margin-right: 4rem; text-align: right; }
         h4 { padding-left: 15%; }
     }
 
     @include media-query($on-palm) {
         &:nth-of-type(odd), &:nth-of-type(even) { 
-            flex-direction: column; 
+            flex-direction: column;  -webkit-flex-direction: column; 
 
             div.feature-text { margin: 2rem 0; text-align: center; }
             img.feature-img:nth-of-type(odd), img.feature-img:nth-of-type(even) { box-shadow: none; display: block; margin: 0 auto; }
@@ -573,11 +573,11 @@ h2.subheader {
 .feature-break { background-color: rgba($white, 0.2); height: 2px; }
 
 .feature-text {
-    display: flex;
-    flex-direction: column;
+    display: flex; display: -webkit-flex;
+    flex-direction: column;  -webkit-flex-direction: column;
     flex: 1;
     margin-left: 4rem;
-    justify-content: center;
+    justify-content: center -webkit-justify-content: center;
     padding: 0;
 
     h3, h4 { color: $white; margin-bottom: 0; }
@@ -605,8 +605,8 @@ h4 { font-size: 1.25rem; }
     max-width: 1200px;
 
         text-align: center;
-    display: flex;
-    flex-direction: column;
+    display: flex; display: -webkit-flex;
+    flex-direction: column;  -webkit-flex-direction: column;
     padding-bottom: 3rem;
 
 }
@@ -630,7 +630,7 @@ h4 { font-size: 1.25rem; }
 
 .testimonial-metrics-wrapper {
     @include media-query($on-palm) {
-        flex-direction: column;
+        flex-direction: column;  -webkit-flex-direction: column;
     }
 }
 
@@ -659,7 +659,7 @@ h4 { font-size: 1.25rem; }
 
 footer { background-color: $grey-primary; }
 .site-footer { border: none; padding: 1rem 0; }
-.footer-nav { align-self: center; }
+.footer-nav { align-self: center; -webkit-align-self: center; }
 .footer-link { 
     color: $grey-secondary; 
     margin: 0 1rem; 
