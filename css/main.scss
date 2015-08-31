@@ -3,7 +3,8 @@
 ---
 @charset "utf-8";
 
-
+// Import Lato font from Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic);
 
 // Our variables
 $base-font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -23,9 +24,9 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    1200px;
-
-$on-palm:          600px;
 $on-laptop:        800px;
+$on-palm:          600px;
+
 
 
 // Using media queries with like this:
@@ -41,8 +42,12 @@ $on-laptop:        800px;
     }
 }
 
-// From @kian
+
+/* From @kian */
+/////////
 // COLORS
+/////////
+
 $black:             #000;
 $white:             #FFF; 
 $transparent:       rgba(255, 255, 255, 0);
@@ -59,28 +64,53 @@ $accent-green:      #37DDC7;
 $accent-orange:     #FDA036;
 $accent-yellow:     #FFCC42; 
 
-$blue-primary_lighten: 	lighten($blue-primary, 30%);
+/////////////////
+// COMMON CLASSES
+/////////////////
+._f-white { color: $white; }
+._f-bold { font-weight: 600; }
 
+._flex { display: flex; }
+._flex-row { flex-direction: row; }
+._flex-row-reverse { flex-direction: row-reverse; }
+._flex-column { flex-direction: column; }
+._flex-column-reverse { flex-direction: column-reverse; }
 
-// VARIABLES
+._flex-1 { flex: 1; }
+._flex-2 { flex: 2; }
+._flex-3 { flex: 3; }
+._flex-4 { flex: 4; }
+
+._img-round { border-radius: 50%; }
+
+._margin-auto { margin: 0 auto; }
+._margin-bottom-0 { margin-bottom: 0; }
+
 ._ta-center { text-align: center; }
 ._ta-left   { text-align: left; }
 ._ta-right  { text-align: right; }
 
+
+//////////////////////
+// FUNCTIONAL CLASSES
+//////////////////////
 ._hide-mobile {
     @include media-query($on-palm) {
         display: none!important;
     } 
 }
 
-._no-margin-bottom { margin-bottom: 0; }
 
-
-
+/////////
+// MIXINS
+/////////
 @mixin animate-this($speed) {
     animation: all $speed, ease-out; 
 }
 
+////////////
+// PARTIALS
+////////////
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",

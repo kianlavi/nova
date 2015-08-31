@@ -204,173 +204,132 @@ pre {
 }
 
 /////////////////////////////
-.btn-primary {
-    background-color: #00B4FF;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    font-size: 0.75rem;
-    padding: 13px 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer; 
-}
+._width-content { max-width: $content-width; }
 
-body { background-color: #fff; }
-.wrapper { max-width: 100vw; }
-.home {  }
-.stack { background-image: url("/img/stack.png")}
+/* TYPOGRAPHY */
+._fw-100 { font-weight: 100; }
+.header_dark { color: $grey-primary; }
+.subheader_dark { color: $grey-secondary; }
 
-.splash { max-width: 900px; padding: 2rem;  margin: 0 auto;}
-#value-prop-2 { color: white; font-family: Lato; font-size: 2.5rem; font-weight: 400; text-align: left; }
-#value-prop-explained { 
-    color: rgba(128,128,128,0.75);
-    font-family: Lato;
-    font-size: 1.4rem; font-weight: 100; text-align: center; }
-#value-prop-explained-2 { 
-    color: rgba(230,230,230,1);
-    font-family: Lato;
-    font-size: 1.1rem; font-weight: 300; text-align: left; width: 66%}
-.center { text-align: center; }
-
-.spacer {margin: 1rem; }
-.subject { font-weight: 600;}
-hr {     border: 0;
-    height: 1px;
-    background-color: rgba(128,128,128,0.25);
-    margin-bottom: 1rem;
-}
-
-.recipient-photo {
-    border-radius: 50%;
-    border: 2px solid #00B4FF; 
-    height: 72px;
-    width: 72px;
-    margin: 0 auto;
-    text-align: center;
-}
-.recipient-name {
-    font-weight: 400;
-    margin-bottom: 0;
-
-}
-.recipient-title {
-    text-transform: uppercase; font-size: 0.85rem; font-weight: bold; color: rgba(128,128,128,0.75); line-height: 1rem
-}
-
-.msg-highlight {
-    animation: all 0.2s ease-out; 
-    border: 1px solid $blue-primary_lighten;
-    margin-bottom: 15px;
-    padding: 10px!important;
-
-    &:hover {
-        border-color: $blue-primary;
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        text-align: right;
-        font-size: 0.65rem;
-        font-style: normal;
-        color: $blue-primary;
-        font-weight: 300;
-        letter-spacing: .5px;
-    }
-}
-
-.wrapper-header { background-color: #fff;  }
-.wrapper-content {background-color: #D8D8D8}
-
-div.email:last-child {
-    margin-bottom: 2rem;
-}
-
-// TYPE
-h1.header { 
+h1.header {
     font-family: Lato, Helvetica Neue, Helvetica, Arial; 
-    font-size: 2rem; 
+    font-size: 2.5rem; 
     font-weight: 300; 
     margin: 0; 
 
     @include media-query($on-palm) {
         font-size: 2rem; 
-        font-weight: 300; 
         line-height: 2rem; 
         margin-bottom: 1rem; 
     }
 }
 h2.subheader {
     font-family: Lato, Helvetica Neue, Arial;
-    font-size: 1.25rem; 
-    font-weight: 200; 
+    font-size: 1.5rem; 
+    font-weight: 300; 
 
     @include media-query($on-palm) {
         font-size: 1.1rem; 
         line-height: 1.4rem; 
     }
 }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.25rem; }
 
-._fw-100 { font-weight: 100; }
 
-.header_dark { color: $grey-primary; }
-.subheader_dark { color: $grey-secondary; }
-.header_light { color: $white; }
-.subheader_light { color: $white; }
-
-// HEADER
-.wrapper-header { max-width: $content-width;}
-
-.site-nav_waitlist { float: right; line-height: 71px;  }
-
-.btn-primary {
-    background-color: $blue-primary;
-    color: $white;
-    border: none;
-    font-size: 0.75rem;
-    padding: 13px 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer; 
-}
-
-// HERO SECTION
-.wrapper-hero { 
-    background-color: $grey-tertiary;  
-    // background-image: url("https://unsplash.imgix.net/reserve/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg?fit=crop&fm=jpg&h=700&q=75&w=1050");
-    background-image: url("/img/bg.png");
-    background-position-y: 30%;
-    background-size: cover; 
-    background-repeat: no-repeat;
-}
-.wrapper-example        { background-color: $blue-primary; }
-.wrapper-testimonials   { background-color: $white; }
+/* COMMON STYLES */
 .section { 
     margin: 0 auto;
     max-width: 960px; 
-    padding: 4rem;
+    padding: 4rem 0;
 }
-.section-hero { padding: 2rem; }
 
+hr {     
+    background-color: rgba($grey-secondary,0.25);
+    border: 0;
+    height: 1px;
+    margin-bottom: 1rem;
+}
+
+/////////
+/* NAV */
+.wrapper-header { max-width: $content-width;}
+.site-nav_waitlist { float: right; line-height: 71px;  }
+
+.btn-primary {
+    @include animate-this(0.2s);
+    background-color: $blue-primary;
+    border: none;
+    color: $white;
+    cursor: pointer; 
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 13px 10px; 
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: lighten($blue-primary, 10%);
+    }
+}
+
+//////////////////
+/* HERO SECTION */
+.wrapper { max-width: 100vw; }
+
+.wrapper-hero {  
+    align-items: center;  -webkit-align-items: center; 
+    background-color: $grey-tertiary;  
+    background-image: url("../img/bg.jpg");
+    background-position-y: 30%;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 80vh; 
+}
+.section-hero { 
+    margin-top: -1rem; 
+    padding: 2rem 0;
+}
+
+
+////////////////////////////
+/* HOW NOVA WORKS SECTION */
+.wrapper-how { background-image: url("../img/bg_how.jpg") }
+.how-graphic {
+    content: " ";
+    height: 115px;
+    background-image: url("../img/how-graphic.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: contain;
+    margin: 1rem auto 3rem;
+    width: 100%;
+    
+    @include media-query($on-palm) {
+        height: 75px; 
+        margin-bottom: 1rem; 
+    }
+}
+
+/* MESSAGE SLIDER */
 .message {
     background-color: $white; 
-    /* @kian: removed the shadows behind the messages for now. */
+    margin: 0 0 2rem;
+
+    /* @kian: enable this to get colored shadows around the messages. */
     // box-shadow: 
     //     11px 11px 0 $blue-secondary, 
     //     24px 24px 0 $blue-primary;
-    margin: 3rem 0 2rem;
-
-    @include media-query($on-palm) {
-        box-shadow: none;
-    } 
+    // @include media-query($on-palm) {
+    //     box-shadow: none;
+    // } 
 }
+
+// This is the grey message header section
 .message-header { 
     background-color: $grey-tertiary; 
     padding: 1rem 2rem; 
     & p { margin: 0; }
 }
-
 .img-sender { 
     float: left; 
     margin-right: 1rem; 
@@ -378,117 +337,252 @@ h2.subheader {
     height: 48px; 
     width: 48px;
 }
-.img-round { border-radius: 50%; }
-
-.msg { font-family: Lato; }
-.message-from { 
-    color: $grey-primary; font-weight: 400;
-
-    @include media-query($on-palm) {
-        font-size: 0.85rem;
-    } 
+.message-count { 
+    color: $grey-secondary; 
+    float: right;
+    font-size: 0.85rem;
+    font-weight: 300;
+    text-transform: uppercase;
 }
-.message-see { 
-    color: $blue-primary; 
-    float: right; 
-    font-size: 0.85rem; 
-    font-weight: 400; 
-}
-.message-to { 
-    color: $grey-primary; 
+.message-names {
+    color: $grey-primary;
 
-    @include media-query($on-palm) {
-        font-size: 0.85rem;
-    } 
+    @include media-query($on-palm) { font-size: 0.85rem };
 }
+.message-from { font-weight: 400; }
 
+// This is the message body section
 .message-body { 
-    display: flex; 
-    // height: 325px; 
-    overflow: scroll;
     
-    /* @kian: hid the after-gradient since the message has been shortened. */
-    // &::after{
-    //     background: linear-gradient(180deg, $transparent, $white);
-    //     bottom: 0;
-    //     content: "";
-    //     height: 15%;
-    //     position: absolute; 
-    //     width: 100%; 
-    // }
-
     @include media-query($on-palm) {
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;  -webkit-flex-direction: column-reverse;  
+
+        height: 425px; 
+        overflow: hidden; 
+
+        &::after{
+            background: linear-gradient(180deg, $transparent, $white);
+            bottom: 0;
+            content: "";
+            height: 15%;
+            position: absolute; 
+            width: 100%; 
+        }
 
     }
 }
-.message-subject-container { display: flex; flex-direction: row; }
+.message-subject-container { justify-content: space-between; -webkit-justify-content: space-between;}
 .message-subject { 
-    flex: 2;
     font-size: 1rem; 
     font-weight: 500; 
     padding: 10px 0 0;
 }
 .message-timestamp {
     color: $grey-secondary;
-    flex: 1;
     font-weight: 300; 
-    text-align: right;
     padding: 10px 0 0;
 }
 
-.message-text  { flex: 4; padding: 1rem 3rem; }
+.message-text  { padding: 1rem 3rem; }
 .message-recipient { 
-    display: flex; 
-    flex-direction: column; 
-    text-align: center; 
-    
-    flex: 1; 
     padding: 1rem 2rem; 
     & p { margin: 0; }
-
-    & .message-recipient-name { color: $grey-primary; font-size: 1.1rem; font-weight: 400; }
-    & .message-recipient-title { color: $grey-secondary; font-size: 0.9rem; }
-    & .img-personalization { margin: 1rem auto 0; max-width: 66%; }
-    & .img-recipient { 
+}
+.message-recipient-name { 
+    color: $grey-primary; 
+    font-size: 1.1rem; 
+    font-weight: 400; 
+}
+.message-recipient-title { color: $grey-secondary; font-size: 0.9rem; }
+.img-personalization { margin: 1rem auto 0; max-width: 33%; }
+.img-recipient { 
         border: 2px solid $blue-primary;
         margin: 0 auto; 
 
         height: 72px; 
         width: 72px; 
+}
+
+
+/////////////////////
+/* FEATURE SECTION */
+.wrapper-example { background-color: $blue-primary; }
+
+.feature {
+    padding: 3rem 0; 
+
+    &:first-child { padding-top: 5rem; }
+    &:nth-of-type(odd) { 
+        flex-direction: row; -webkit-flex-direction: row;  
+    
+        img.feature-img { box-shadow: -15px 15px 1px rgba($black, 0.2) }
+        div.feature-text { margin-left: 4rem; text-align: left; }
+        h4 { padding-right: 15%; }
+    }
+    &:nth-of-type(even) { 
+        flex-direction: row-reverse; -webkit-flex-direction: row-reverse; 
+
+        img.feature-img { box-shadow: 15px 15px 1px rgba($black, 0.2); }
+        img.feature-icon { align-self: flex-end; -webkit-align-self: flex-end;  }
+        div.feature-text { margin-right: 4rem; text-align: right; }
+        h4 { padding-left: 15%; }
     }
 
+    @include media-query($on-palm) {
+        &:nth-of-type(odd), &:nth-of-type(even) { 
+            flex-direction: column;  -webkit-flex-direction: column; 
+
+            div.feature-text { margin: 2rem 0; text-align: center; }
+            img.feature-img:nth-of-type(odd), img.feature-img:nth-of-type(even) { box-shadow: none; display: block; margin: 0 auto; }
+            img.feature-icon { margin: 0 auto;  }
+            h4 { padding: 0; }
+        }
+    }
 }
 
-.screenshot {
-    background-image: url("/img/screenshot.png");
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: contain; 
-    margin-top: 2rem; 
-    margin-bottom: 2rem;
-    min-height: 500px; 
+.feature-img { 
+    max-height: 300px; 
 
-
+    @include media-query($on-palm) {
+        max-height: 250px;      
+    }
 }
 
+.feature-break { background-color: rgba($white, 0.2); height: 2px; }
+
+.feature-text {
+    margin-left: 4rem;
+    justify-content: center; -webkit-justify-content: center;
+    padding: 0;
+
+    h3, h4 { color: $white; margin-bottom: 0; }
+}
+
+
+.feature-icon { height: 96px; width: 96px; }
+
+
+//////////////////////////
+/* TESTIMONIALS SECTION */
+.wrapper-testimonials-intro { margin: 3rem 0 1rem; }
+
+// @kian: update this background-image with jQuery for each testimonial
+.testimonial {
+    background-image: url('../img/testimonials/1_bg.png');
+    background-size: cover;
+    border: 1px solid $white;
+    margin: 0 auto;
+    min-height: 600px;
+    max-width: 1200px;
+    padding-bottom: 3rem;
+}
+
+.testimonial-logo { max-width: 300px; }
+
+.testimonial-quote { 
+    font-size: 1.5rem; 
+    margin: 2rem auto 3rem; 
+    width: 66%; 
+
+    @include media-query($on-palm) {
+        font-size: 1rem; 
+        line-height: 1.25rem; 
+        margin: 2rem auto; 
+        padding: 0 1rem; 
+        width: initial; 
+    }
+}
+
+.testimonial-metrics-wrapper {
+    justify-content: space-around; 
+
+    @include media-query($on-palm) {
+        flex-direction: column;  -webkit-flex-direction: column;
+    }
+}
+.testimonial-metric {
+    @include media-query($on-palm) {
+        margin: 3rem auto;
+
+        &:first-child { margin-top: 2rem; }
+        & img { display: block; margin: 3rem auto; }
+    }
+}
+
+
+////////////////////////////
+/* CALL TO ACTION SECTION */
+.wrapper-cta { 
+    background-color: $grey-secondary; 
+    background-image: url("../img/bg_dark.png"); 
+    background-size: cover; 
+}
+.section-cta { padding: 8rem 0; }
+
+.btn-cta { 
+    margin: 2rem 0 1.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.btn-hero { margin: 1rem 0; }
+
+
+////////////////////
+/* FOOTER SECTION */
+footer { background-color: $grey-primary; }
+.site-footer { border: none; padding: 1rem 0; }
+
+.footer-nav { align-self: center; -webkit-align-self: center; }
+.footer-link { 
+    color: $grey-secondary; 
+    margin: 0 1rem; 
+    text-decoration: none;
+    
+    &:hover { color: $blue-primary; text-decoration: none; }
+    &:active, &:focus, &:visited { color: $grey-secondary; text-decoration: none; }
+}
+
+
+
+/////////////////////
+/* SLICK OVERRIDES */
+// @kian: This sets up the arrow styles
 .arrow-prev, .arrow-next {
     @include animate-this(0.2s);
     position: absolute;
     top: 50%; 
     margin-top: -2rem;
     
-    color: $grey-secondary;
+    color: $white;
     cursor: pointer;
     font-size: 4rem!important; 
 
-    &:hover { color: $grey-primary; }
+    &:hover { color: $blue-primary; }
 }
+// @kian: .arrow-prev and .arrow-next get repositioned absolutely
 .arrow-prev { left: -4rem; }
 .arrow-next { right: -4rem; }
 .arrow-inactive { 
-    color: $grey-tertiary; 
+    color: $white; 
     cursor: auto;
+    opacity: 0.2;
 
-    &:hover { color: $grey-tertiary; }
+    &:hover { color: $white; opacity: 0.2; }
+}
+
+// @kian: This gets rid of the bug with Slick showing a focus outline on the current slide.
+.slick-slide:focus { outline:0;  }
+.slick-dots { margin-left: 0; }
+.slick-dots li.slick-active button:before { color: $white; }
+
+
+///////////////////////////
+/* TOOLTIPSTER OVERRIDES */
+// @kian: Makes the tooltips responsive
+.tooltipster-base {
+    z-index: 1; 
+    @include media-query($on-palm) {
+        width: 50vw!important;
+    }
 }

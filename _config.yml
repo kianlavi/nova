@@ -11,3 +11,5 @@ github_username:  novaai
 
 # Build settings
 markdown: kramdown
+gems:
+  - octopress-autoprefixer

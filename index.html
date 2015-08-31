@@ -2,44 +2,79 @@
 layout: home
 ---
 
-<div class="wrapper wrapper-hero">
+<div class="wrapper wrapper-hero _flex _ta-center">
   <div class="section section-hero">
-    <h1 class="header header_dark _ta-center">Grow your email revenue by 300%. </h1>
-    <h2 class="subheader subheader_dark _ta-center">Nova's Content Intelligence Engine enhances your existing email messaging <br> to 
-    engage customers and prospects at a significantly higher rate.</h3>  
+    <h1 class="header header_dark _ta-center">
+      Grow your email revenue by 300%. 
+    </h1>
+    <h2 class="subheader subheader_dark _ta-center">
+      Nova's Content Intelligence Engine enhances your existing email messaging 
+      <br class="_hide-mobile"> 
+      to engage customers and prospects at a significantly higher rate.
+    </h2>  
+    <button   class="btn-primary btn-cta btn-hero join-waitlist wl-initialized"
+              type="button" >
+        Join the waitlist
+    </button>
+  </div>
+</div>
 
-    <div class="message wrapper-slick">
+<div class="wrapper wrapper-how">
+  <div class="section section-how">
+    <h1 class="header _f-white _ta-center">
+      How Nova works
+    </h1>
+    
+    <!-- .how-graphic is the 'How Nova Works' graphic - the image itself is a background-image in _base.scss -->
+    <div class="how-graphic _margin-auto"></div>
+    
+    <div class="message wrapper-slick">  
+      
+      <!-- This loop accesses /_data/recipients.yml  to populate recipient information throughout the message. -->
+      {% for recipient in site.data.recipients %}
       <div>
         <div class="message-header">  
-          <img class="img-sender img-round" src="{{ site.baseurl }}/img/hero/user_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 1 of 149)</p>
-          <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
-          <p class="message-to">to: Patrick Castro</p>
+          <!-- This loop accesses /_data/sally.yml to populate Sally's (the sender's) information in .message-header -->
+          {% for sally in site.data.sally %}
+          <img  class="img-sender _img-round"
+                src="{{ site.baseurl }}{{ sally.image }}" 
+                alt="{{ sally.firstname }} {{ sally.lastname }}">
+          <p class="message-count _hide-mobile">
+            <!-- @kian: I used the cycle helper here to swap out the numbers more easily. -->
+            (Message {% cycle '1', '2', '3' %} of 149)
+          </p> 
+          <p class="message-name message-from">
+            from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}
+          </p>
+          {% endfor %}
+          <p class="message-name">
+            to: {{ recipient.firstname }} {{ recipient.lastname }}
+          </p>
         </div>
 
-        <div class="message-body">
-          <div class="message-text">
-            <div class="message-subject-container">
-              <p class="message-subject">
-                Subject: Better employee comms
+        <div class="message-body _flex">
+          <div class="message-text _flex-4">
+            <div class="message-subject-container _flex _flex-row">
+              <!-- The forloops in this <p>, <span>, and <div> elements are to control where the tooltips are attached below. -->
+              <p class="message-subject subject-{{ forloop.index }}">
+                Subject: {{ recipient.subject }}  
               </p>
-              <span class="message-timestamp"> 
-                Sent at 8:35am
+              <span class="message-timestamp timestamp-{{ forloop.index }} _ta-right"> 
+                Sent at {{ recipient.timestamp }}
               </span>
             </div>
             <hr>
-            <div id="ttip-location" class="msg-highlight ttip">
-              <p class="_no-margin-bottom">
-              Hey, I see that you used to live in Long Beach. Southern California is really a beautiful area. Did you ever go to see the Queen Mary? 
-              <!-- <span class="msg-highlight tooltip" title="Nova is... ">Hey, I see that you used to live in Long Beach, Southern California is really a beautiful area. Did you ever go to see the Queen Mary? </span> -->
+            <div class="personalization-{{ forloop.index }}">
+              <!-- @kian: I added this if-statement here to ensure that the first slide + tooltip are styled correctly on-load  -->
+              {% if recipient.highlightClass %}
+              <p  id="{{ recipient.highlightId }}" 
+                  class="{{ recipient.highlightClass }} _margin-bottom-0">
+              {% endif %}
+              {{ recipient.personalization }}
               </p>
             </div>
             <p>
-              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
-            </p>
-            <p>
-              We think that a forward thinking organization like KCR would be a great candidate to get early access and provide valuable feedback.
+              We think that a forward thinking organization like {{ recipient.company }} would be a great candidate to get early access and provide valuable feedback.
             </p>
             <p>
               I'd be happy to explain further and give a live demo. Are you free this Tuesday at 2pm for 15 minutes to chat?
@@ -51,337 +86,136 @@ layout: home
               Sally
             </p>
           </div>
-          <div class="_hide-mobile message-recipient">
-            <img class="img-recipient img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg" alt="Lindsey Kelly">
-            <p class="message-recipient-name">Patrick Castro</p>
-            <p class="message-recipient-title">Benefits Administrator</p>
-            <p class="message-recipient-title">KCR</p>
-            <img class="img-personalization" src="{{ site.baseurl }}/img/hero/loca_ca.svg" alt="">
+
+          <div class="message-recipient _flex _flex-1 _flex-column _hide-mobile _ta-center">
+            <img  class="img-recipient _img-round" 
+                  src="{{ site.baseurl }}{{ recipient.image }}" 
+                  alt="{{ recipient.firstname }} {{ recipient.lastname }}">
+            <p class="message-recipient-name">
+              {{ recipient.firstname }} {{ recipient.lastname }}
+            </p>
+            <p class="message-recipient-title">
+              {{ recipient.title }}
+            </p>
+            <p class="message-recipient-title">
+              {{ recipient.company }}
+            </p>
+            <img  class="img-personalization" 
+                  src="{{ site.baseurl }}{{ recipient.personalizationimage }}" 
+                  alt="{{ recipient.personalizationimagealt }}">
+
           </div>
         </div>  
-        </div>
-        <div>
-        <div class="message-header">  
-          <img class="img-sender img-round" src="{{ site.baseurl }}/img/hero/user_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 2 of 149)</p>
-          <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
-          <p class="message-to">to: Lindsey Kelly</p>
-        </div>
-
-        <div class="message-body">
-          <div class="message-text">
-            <div class="message-subject-container">
-              <p id="ttip-subject" class="message-subject msg-highlight ttip">
-                Subject: Your volunteer work with Hands On Bay Area
-              </p>
-              <span class="message-timestamp"> 
-                Sent at 10:07am
-              </span>
-            </div>
-            <hr>
-            <p>
-              Congrats on your volunteer work with Hands On Bay Area! Do you still work with the organization? Great to see people doing good work to help out the community here.
-            </p>
-            <p>
-              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
-            </p>
-            <p>
-              We think that a forward thinking organization like LoudSound would be a great candidate to get early access and provide valuable feedback.
-            </p>
-            <p>
-              I'd be happy to explain further and give a live demo. Are you free this Tuesday at 2pm for 15 minutes to chat?
-            </p>
-            <p>
-              Best,
-            </p>
-            <p>
-              Sally
-            </p>
-          </div>
-          <div class="_hide-mobile message-recipient">
-            <img class="img-recipient img-round" src="{{ site.baseurl }}/img/hero/user_lindsey.png" alt="Lindsey Kelly">
-            <p class="message-recipient-name">Lindsey Kelly</p>
-            <p class="message-recipient-title">VP of HR</p>
-            <p class="message-recipient-title">LoudSound</p>
-            <!-- @kian: #fix the volunteer image so it's an SVG -->
-            <img class="img-personalization" src="{{ site.baseurl }}/img/hero/pson_volunteer.png" alt="">
-          </div>
-        </div>  
-        </div>
-        <div>
-        <div class="message-header">  
-          <img class="img-sender img-round" src="{{ site.baseurl }}/img/hero/user_sally.png" alt="Sally Anderson">
-          <p class="message-to _hide-mobile" style="float: right;font-weight: 500;text-transform: uppercase;font-size: 0.85rem;">(Message 3 of 149)</p>
-          <p class="message-from">from: Sally Anderson, Revenue Development at BrightSpark</p>
-          <p onclick="togglePersonalization()" class="_hide-mobile" style="float: right;color: white;font-weight: 500;color: #00B4FF;text-transform: uppercase;font-size: 0.85rem;"><!-- See what Sally wrote --></p>
-          <p class="message-to">to: Shirley Howell</p>
-        </div>
-
-        <div class="message-body">
-          <div class="message-text">
-            <div class="message-subject-container">
-              <p class="message-subject">
-                Subject: Fellow Stanford grad
-              </p>
-              <span id="ttip-timestamp" class="message-timestamp msg-highlight ttip"> 
-                Sent at 4:15pm
-              </span>
-            </div>
-            <hr>
-            <p>
-              Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinals!
-            </p>
-            <p>
-              <!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> 
-            </p>
-            <p>
-              We think that a forward thinking organization like Loud Sound would be a great candidate to get early access and provide valuable feedback.
-            </p>
-            <p>
-              I'd be happy to explain further and give a live demo. Are you free this Tuesday at 2pm for 15 minutes to chat?
-            </p>
-            <p>
-              Best,
-            </p>
-            <p>
-              Sally
-            </p>
-          </div>
-          <div class="_hide-mobile message-recipient">
-            <img class="img-recipient img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="Lindsey Kelly">
-            <p class="message-recipient-name">Shirley Howell</p>
-            <p class="message-recipient-title">Director of Talent</p>
-            <p class="message-recipient-title">OldRelic</p>
-            <img class="img-personalization" src="{{ site.baseurl }}/img/hero/simi_school.svg" alt="">
-          </div>
-        </div>
-
+      </div>
+      {% endfor %} 
       </div>
       
     </div>
   </div>
-</div>
+</div> 
 
-<div class="wrapper wrapper-example">
+ <div class="wrapper wrapper-example">
   <div class="section">
-    <h1 class="header header_light _ta-left _fw-100">Nova gets smarter the more you use it. </h1>
-    <h2 style="width: 66%;" class="subheader subheader_light _ta-left">By ingesting the emails you send and the replies you get, Nova can increase its corpus of knowledge and create messaging. </h3>  
-    <div class="screenshot animated fadeInLeft"></div>
-    <div class="features" style="display: flex; flex-direction: row;">
-      <div data-sr="wait 2.5s, ease-in-out 100px" class="feature" style="flex: 1">
-        <img style="float: left; height: 72px; margin-right: 1rem" class="img-recipient img-round" src="{{ site.baseurl }}/img/icons/similarity.png" alt="Lindsey Kelly">
-        <p style="color: white; font-weight: 400; margin-bottom: 0; text-transform: uppercase;" class="feature-title">One to many</p>
-        <p style="color: white;" class="feature-description">Description tristique semper ornare. Fusce id mi nec.</p>
-      </div>
-      <div data-sr="wait 2.5s, ease-in-out 100px" class="feature" style="flex: 1">
-        <img style="float: left; height: 72px; margin-right: 1rem" class="img-recipient img-round" src="{{ site.baseurl }}/img/icons/replied.png" alt="Lindsey Kelly">
-        <p style="color: white; font-weight: 400; margin-bottom: 0; text-transform: uppercase;" class="feature-title">Gets smarter</p>
-        <p style="color: white;" class="feature-description">Description tristique semper ornare. Fusce id mi nec.</p>
-      </div>
-      <div data-sr="wait 2.5s, ease-in-out 100px" class="feature" style="flex: 1">
-        <img style="float: left; height: 72px; margin-right: 1rem" class="img-recipient img-round" src="{{ site.baseurl }}/img/icons/personal.png" alt="Lindsey Kelly">
-        <p style="color: white; font-weight: 400; margin-bottom: 0; text-transform: uppercase;" class="feature-title">Increase engagement</p>
-        <p style="color: white;" class="feature-description">Description tristique semper ornare. Fusce id mi nec.</p>
-      </div>
+    <h1 class="header _f-white _ta-center">Nova gets smarter the more you use it.</h1>
+    <h2 class="subheader _f-white _ta-center">Nova captures every data point and utilizes machine learning to further improve the performance of your outbound emails.</h2>  
+    
+    <div>
+      <!-- This loop access /_data/features.yml and populates images, icons, and headers accordingly -->
+      {% for feature in site.data.features %}
+      <div class="feature _flex">
+        <img    class="feature-img" 
+                src="{{ site.baseurl }}{{ feature.image }}" 
+                alt="{{ feature.header }}">
+        <div class="feature-text _flex _flex-1 _flex-column">
+          <img  class="feature-icon" 
+                src="{{ site.baseurl }}{{ feature.icon }}" 
+                alt="{{ feature.subheader }}">
+          <h3>
+            {{ feature.header }}
+          </h3>
+          <h4>
+            {{ feature.subheader }}
+          </h4>
+        </div>
+      </div>      
+      <!-- This loop ensures that <hr> doesn't show up on the last element. -->
+      {% if forloop.index < 3  %}
+      <hr class="feature-break">
+      {% endif %}
+
+      {% endfor %}
+
     </div>
+
   </div>
 </div>    
 
-<div class="wrapper wrapper-testimonials">
-  <div class="section">
-    <h1 class="header header_darl _ta-center">Trusted by companies everywhere. </h1>
-    </div>
-  </div>
+<!-- @kian: had to separate this one out for dumb CSS reasons -->
+<div class="wrapper wrapper-testimonials-intro">
+  <h1 class="header _ta-center">Trusted by companies everywhere. </h1>
 </div>
 
-<div class="wrapper wrapper-testimonials" style="
-    margin-bottom: 4rem;
-">
-  <div style="
-    background-color: grey;
-    border: 1px solid white;
-    min-height: 600px;
-    margin-bottom: 10rem;
-    background-image: url(&quot;http://i.imgur.com/8iYbOgO.png&quot;);
-    background-size: cover;
-    border-style: solid;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 1260px 0px 0px rgba(98, 119, 117, 0.52), -1260px 0px 0px 0px rgba(98, 119, 117, 0.49);
-">
-    <div style="
-    position: relative;
-    text-align: center;
-">
-      <div style="
-    /* text-align: center; */
-    /* position: absolute; */
-    /* margin-left: -343px; */
-    /* left: 50%; */
-    /* top: -35px; */
-    margin-top: -60px;
-    /* width: 100%; */
-    /* margin: 0 auto; */
-">
-        <img class="img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
-        <p style="
-    color: white;
-"><span style="
-    font-weight: bold;
-">Shirley Temple, </span>Customer Advocate</p>
-
-
- 
-      </div>
-    <img src="http://storefront.nr-assets.net/assets/newrelic/source/NewRelic-logo-bug.png" style="
-    width: 25%;
-    margin: 0 auto;
-    text-align: center;
-"><h3 class="subheader-light" style="
-    color: white;
-    width: 66%;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-">
-Quisque tristique semper ornare. Fusce id mi nec augue scelerisque eleifend. Ut ultricies suscipit facilisis. Phasellus convallis posuere posuere. Praesent dui orci, accumsan at elit vitae, laoreet semper leo. In viverra faucibus.</h3>
-
-<div style="
-    display: flex;
-    flex-direction: row;
-    width: 66%;
-    margin: 0 auto;
-">
-    
-  <div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">OPEN RATE</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">46%</p>
-    <p style="
-    color: white;
-">vs 23% before Nova</p>
-    
-  </div>  
-  <div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">DEMOS PER WEEK</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">10</p>
-    <p style="
-    color: white;
-">vs 3 before Nova</p>
-    
-  </div><div style="
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-">
-    <p style="
-    color: white;
-    letter-spacing: 2px;
-    margin-bottom: 0rem;
-">POSITIVE RESPONSES</p>
-    <p style="
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 0rem;
-">+318%</p>
-    <p style="
-    color: white;
-">vs 25% before Nova</p>
-    
-  </div>  
+<div class="wrapper-slick2">
   
-</div>
-</div>
-  </div>
-  
-  <!-- <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div>
-  <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div>
-  <div style="margin-top: 0;" class="screenshot animated fadeInLeft"></div> -->
-</div>
-
-<script>
-$(document).ready(function() {
-    $('#ttip-location').tooltipster({
-        content: $('<p>Nova crafts custom introductory paragraphs for each of your recipients.</p>'),
-        multiple: true, 
-    });
-
-    $('#ttip-subject').tooltipster({
-        content: $('<p>Nova creates individualized subject lines that get opens.</p>'),
-        multiple: true, 
-    });
-
-    $('#ttip-timestamp').tooltipster({
-        content: $('<p>Nova knows when each of your recipients are active and sends your emails at the best possible time.</p>'),
-        multiple: true, 
-    });
-});
-</script>
-
-<script>
-$('.wrapper-slick').on('init', function(event, slick){
-  $('.arrow-prev').addClass('arrow-inactive');
-});
-
-$('.wrapper-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  switch (currentSlide) {
-    case 0: 
-      $('#ttip-location').tooltipster('hide');
-      break;
-    case 1: 
-      $('#ttip-subject').tooltipster('hide');
-      break;
-    case 2: 
-      $('#ttip-timestamp').tooltipster('hide');
-      break;
-  }
-});
-
-$('.wrapper-slick').on('afterChange', function(event, slick, currentSlide, nextSlide){
-  switch (currentSlide) {
-    case 0: 
-      $('#ttip-location').tooltipster('show');
-      $('.arrow-prev').addClass('arrow-inactive');
-      break;
-    case 1: 
-      $('#ttip-subject').tooltipster('show');
-      $('.arrow-prev').removeClass('arrow-inactive');
-      $('.arrow-next').removeClass('arrow-inactive');
-      break;
-    case 2: 
-      $('#ttip-timestamp').tooltipster('show');
-      $('.arrow-next').addClass('arrow-inactive');
-      break;
-  }
-});
+  <!-- This loop accesses /_data/testimonials.yml to populate the slider with case studies  -->
+  {% for testimonial in site.data.testimonials %}
+  <div>
+    <div class="wrapper wrapper-testimonials">
+      <div class="testimonial _flex _flex-column _ta-center">
         
+        <div class="testimonial-user">
+          <img  class="_img-round _margin-auto" 
+                src="{{ site.baseurl }}{{ testimonial.image }}" 
+                alt="{{ testimonial.name }}">
+          <p class="_f-white">
+            <span class="_f-bold">
+              {{ testimonial.name }}, </span>{{ testimonial.position }}
+          </p>
+          <img  class="testimonial-logo _margin-auto" 
+                src="{{ site.baseurl }}{{ testimonial.logo }}"
+                alt="{{ testimonial.company }}">
+        </div>
+          
+        <p class="testimonial-quote _f-white">
+          "{{ testimonial.quote }}"
+        </p>
+        
+        <div class="testimonial-metrics-wrapper _flex _flex-row">
+          <div class="testimonial-metric _flex _flex-column">
+            <img  src="{{ site.baseurl }}{{ testimonial.graph1 }}" 
+                  alt="{{ testimonial.graph1alt }}">
+          </div>
 
-  $(window).load(function() {
-    $("#ttip-location").tooltipster('show');
-  });
-</script>
+          <div class="testimonial-metric _flex _flex-column">
+            <img  src="{{ site.baseurl }}{{ testimonial.graph2 }}" 
+                  alt="{{ testimonial.graph2alt }}">
+          </div>  
+
+          <div class="testimonial-metric _flex _flex-column">
+            <img  src="{{ site.baseurl }}{{ testimonial.graph3 }}" 
+                  alt="{{ testimonial.graph3alt }}">
+          </div>  
+        </div>
+
+      </div>
+    </div>  
+  </div>
+  {% endfor %}
+
+</div>
+
+
+<div class="wrapper wrapper-cta">
+  <div class="section section-cta _ta-center">
+    <h1 class="header _f-white">
+      Get early access to Nova.
+    </h1>
+    <button type="button" class="btn-primary btn-cta join-waitlist">
+      Join the waitlist
+    </button>
+ </div>
+</div>
+
+<script type="text/javascript" src="{{ site.baseurl }}/js/initialize_tooltips.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/initialize_slider.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/retina.min.js"></script>

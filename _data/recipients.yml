@@ -2,23 +2,34 @@
   lastname: Castro
   title: Benefits Administrator
   company: KCR
-  image: /img/hero/u_patrick.png
-  personalization: Nova generates personalized details about your contacts based on available information.
+  image: /img/hero/user_patrick.jpg
+  personalization: Hey, I see that you used to live in Long Beach. Southern California is really a beautiful area. Did you ever go to see the Queen Mary?
+  personalizationimage: /img/hero/loca_ca.svg
+  personalizationimagealt: From Long Beach, CA
   subject: Better employee comms
+  timestamp: 8:35am
+  highlightClass: msg-highlight
+  highlightId: ttip-location
 
 - firstname: Lindsey
   lastname: Kelly
   title: VP of HR
   company: LoudSound
-  image: /img/hero/u_lindsey.png
-  personalization: Nova does... 
+  image: /img/hero/user_lindsey.png
+  personalization: Congrats on your volunteer work with Hands On Bay Area! Do you still work with the organization? Great to see people doing good work to help out the community here.
+  personalizationimage: /img/hero/pson_vol.png
+  personalizationimagealt: Volunteer at Hands on Bay Area
   subject: Your volunteer work with Hands On Bay Area
+  timestamp: 10:07am
 
 - firstname: Shirley
   lastname: Howell
   title: Director of Talent
   company: OldRelic
-  image: /img/hero/u_shirley.png
+  image: /img/hero/user_shirley.jpg
   personalization: Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinal!
+  personalizationimage: /img/hero/simi_school.svg
+  personalizationimagealt: Went to the same school
   subject: Fellow Stanford grad
+  timestamp: 4:15pm
 

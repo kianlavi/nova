@@ -1,0 +1,16 @@
+
+- image: /img/middle/any-scale.png
+  icon: /img/middle/i_people.png
+  header: Works at any scale
+  subheader: Nova can personalize thousands of emails in just minutes, and can work for sending 50 or 50,000 messages per day.
+
+- image: /img/middle/knows-what.png
+  icon: /img/middle/i_heart.png
+  header: Nova knows what drives engagement
+  subheader: Based on historical data, Nova knows exactly what messages resonate with what individuals. Nova puts this data to work to create a message that is optimized for effectiveness.
+
+- image: /img/middle/engage-people.png
+  icon: /img/middle/i_brain.png
+  header: Timing matters
+  subheader: When you send a message has a dramatic impact on a recipients' engagement. Nova knows when your prospects are active and most likely to engage with your messaging.
+
