@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<div class="wrapper wrapper-hero">
+<div class="wrapper wrapper-hero _flex _ta-center">
   <div class="section section-hero">
     <h1 class="header header_dark _ta-center">
       Grow your email revenue by 300%. 
@@ -43,23 +43,23 @@ layout: home
             <!-- @kian: I used the cycle helper here to swap out the numbers more easily. -->
             (Message {% cycle '1', '2', '3' %} of 149)
           </p> 
-          <p class="message-from">
+          <p class="message-name message-from">
             from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}
           </p>
           {% endfor %}
-          <p class="message-to">
+          <p class="message-name">
             to: {{ recipient.firstname }} {{ recipient.lastname }}
           </p>
         </div>
 
-        <div class="message-body">
-          <div class="message-text">
-            <div class="message-subject-container">
+        <div class="message-body _flex">
+          <div class="message-text _flex-4">
+            <div class="message-subject-container _flex _flex-row">
               <!-- The forloops in this <p>, <span>, and <div> elements are to control where the tooltips are attached below. -->
               <p class="message-subject subject-{{ forloop.index }}">
                 Subject: {{ recipient.subject }}  
               </p>
-              <span class="message-timestamp timestamp-{{ forloop.index }}"> 
+              <span class="message-timestamp timestamp-{{ forloop.index }} _ta-right"> 
                 Sent at {{ recipient.timestamp }}
               </span>
             </div>
@@ -68,7 +68,7 @@ layout: home
               <!-- @kian: I added this if-statement here to ensure that the first slide + tooltip are styled correctly on-load  -->
               {% if recipient.highlightClass %}
               <p  id="{{ recipient.highlightId }}" 
-                  class="{{ recipient.highlightClass }} _no-margin-bottom">
+                  class="{{ recipient.highlightClass }} _margin-bottom-0">
               {% endif %}
               {{ recipient.personalization }}
               </p>
@@ -87,7 +87,7 @@ layout: home
             </p>
           </div>
 
-          <div class="message-recipient _hide-mobile">
+          <div class="message-recipient _flex _flex-1 _flex-column _hide-mobile _ta-center">
             <img  class="img-recipient _img-round" 
                   src="{{ site.baseurl }}{{ recipient.image }}" 
                   alt="{{ recipient.firstname }} {{ recipient.lastname }}">
@@ -122,11 +122,11 @@ layout: home
     <div>
       <!-- This loop access /_data/features.yml and populates images, icons, and headers accordingly -->
       {% for feature in site.data.features %}
-      <div class="feature">
+      <div class="feature _flex">
         <img    class="feature-img" 
                 src="{{ site.baseurl }}{{ feature.image }}" 
                 alt="{{ feature.header }}">
-        <div class="feature-text">
+        <div class="feature-text _flex _flex-1 _flex-column">
           <img  class="feature-icon" 
                 src="{{ site.baseurl }}{{ feature.icon }}" 
                 alt="{{ feature.subheader }}">
@@ -161,7 +161,7 @@ layout: home
   {% for testimonial in site.data.testimonials %}
   <div>
     <div class="wrapper wrapper-testimonials">
-      <div class="testimonial">
+      <div class="testimonial _flex _flex-column _ta-center">
         
         <div class="testimonial-user">
           <img  class="_img-round _margin-auto" 
