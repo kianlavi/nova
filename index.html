@@ -9,9 +9,13 @@ layout: home
     </h1>
     <h2 class="subheader subheader_dark _ta-center">
       Nova's Content Intelligence Engine enhances your existing email messaging 
-      <br class="_hide-mobile"> to engage customers and prospects at a significantly higher rate.
+      <br class="_hide-mobile"> 
+      to engage customers and prospects at a significantly higher rate.
     </h2>  
-    <button type="button" class="join-waitlist btn-primary btn-cta btn-hero wl-initialized">Join the waitlist</button>
+    <button   class="btn-primary btn-cta btn-hero join-waitlist wl-initialized"
+              type="button" >
+        Join the waitlist
+    </button>
   </div>
 </div>
 
@@ -20,26 +24,38 @@ layout: home
     <h1 class="header _f-white _ta-center">
       How Nova works
     </h1>
+    
+    <!-- .how-graphic is the 'How Nova Works' graphic - the image itself is a background-image in _base.scss -->
     <div class="how-graphic _margin-auto"></div>
+    
     <div class="message wrapper-slick">  
       
-      <!-- This for-loop allows us to use recipients.yml in _data/ to populate the recipients' information. -->
+      <!-- This loop accesses /_data/recipients.yml  to populate recipient information throughout the message. -->
       {% for recipient in site.data.recipients %}
       <div>
         <div class="message-header">  
-          <!-- This allows us to use sally.yml in _data/ to populate the sender information across all messages. -->
+          <!-- This loop accesses /_data/sally.yml to populate Sally's (the sender's) information in .message-header -->
           {% for sally in site.data.sally %}
-          <img class="img-sender _img-round" src="{{ site.baseurl }}{{ sally.image }}" alt="{{ sally.firstname }} {{ sally.lastname }}">
-          <!-- @kian: Sorry for this, it was the easiest way to cycle through numbers at the top-right of each message. -->
-          <p class="message-count _hide-mobile">(Message {% cycle '1', '2', '3' %} of 149)</p> 
-          <p class="message-from">from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}</p>
+          <img  class="img-sender _img-round"
+                src="{{ site.baseurl }}{{ sally.image }}" 
+                alt="{{ sally.firstname }} {{ sally.lastname }}">
+          <p class="message-count _hide-mobile">
+            <!-- @kian: I used the cycle helper here to swap out the numbers more easily. -->
+            (Message {% cycle '1', '2', '3' %} of 149)
+          </p> 
+          <p class="message-from">
+            from: {{ sally.firstname }} {{ sally.lastname }}, {{ sally.title }} at {{ sally.company }}
+          </p>
           {% endfor %}
-          <p class="message-to">to: {{ recipient.firstname }} {{ recipient.lastname }}</p>
+          <p class="message-to">
+            to: {{ recipient.firstname }} {{ recipient.lastname }}
+          </p>
         </div>
 
         <div class="message-body">
           <div class="message-text">
             <div class="message-subject-container">
+              <!-- The forloops in this <p>, <span>, and <div> elements are to control where the tooltips are attached below. -->
               <p class="message-subject subject-{{ forloop.index }}">
                 Subject: {{ recipient.subject }}  
               </p>
@@ -49,13 +65,14 @@ layout: home
             </div>
             <hr>
             <div class="personalization-{{ forloop.index }}">
+              <!-- @kian: I added this if-statement here to ensure that the first slide + tooltip are styled correctly on-load  -->
               {% if recipient.highlightClass %}
-              <p class="{{ recipient.highlightClass }} _no-margin-bottom" id="{{ recipient.highlightId }}">
+              <p  id="{{ recipient.highlightId }}" 
+                  class="{{ recipient.highlightClass }} _no-margin-bottom">
               {% endif %}
               {{ recipient.personalization }}
               </p>
             </div>
-            <p><!-- My name is Sally and I’m an account executive here at BrightSpark. I’m messaging to let you know that we’re releasing a new version of our HR benefits administration software and that we’ll be offering introductory pricing. --> </p>
             <p>
               We think that a forward thinking organization like {{ recipient.company }} would be a great candidate to get early access and provide valuable feedback.
             </p>
@@ -69,13 +86,24 @@ layout: home
               Sally
             </p>
           </div>
-          <div class="_hide-mobile message-recipient">
-            <img class="img-recipient _img-round" src="{{ recipient.image }}" alt="{{ recipient.firstname }} {{ recipient.lastname }}">
-            <p class="message-recipient-name">{{ recipient.firstname }} {{ recipient.lastname }}</p>
-            <p class="message-recipient-title">{{ recipient.title }}</p>
-            <p class="message-recipient-title">{{ recipient.company }}</p>
-            <img class="img-personalization" src="{{ site.baseurl }}{{ recipient.personalizationimage }}" alt="{{ recipient.personalizationimagealt }}">
-            
+
+          <div class="message-recipient _hide-mobile">
+            <img  class="img-recipient _img-round" 
+                  src="{{ recipient.image }}" 
+                  alt="{{ recipient.firstname }} {{ recipient.lastname }}">
+            <p class="message-recipient-name">
+              {{ recipient.firstname }} {{ recipient.lastname }}
+            </p>
+            <p class="message-recipient-title">
+              {{ recipient.title }}
+            </p>
+            <p class="message-recipient-title">
+              {{ recipient.company }}
+            </p>
+            <img  class="img-personalization" 
+                  src="{{ site.baseurl }}{{ recipient.personalizationimage }}" 
+                  alt="{{ recipient.personalizationimagealt }}">
+
           </div>
         </div>  
       </div>
@@ -92,162 +120,102 @@ layout: home
     <h2 class="subheader _f-white _ta-center">Nova captures every data point and utilizes machine learning to further improve the performance of your outbound emails.</h2>  
     
     <div>
+      <!-- This loop access /_data/features.yml and populates images, icons, and headers accordingly -->
+      {% for feature in site.data.features %}
       <div class="feature">
-        <img class="feature-img" src="{{ site.baseurl }}/img/middle/any-scale.png" alt="">
+        <img    class="feature-img" 
+                src="{{ feature.image }}" 
+                alt="{{ feature.header }}">
         <div class="feature-text">
-          <img class="feature-icon" src="{{ site.baseurl }}/img/middle/i_people.png" alt="">
-          <h3>Works at any scale</h3>
-          <h4>Nova can personalize thousands of emails in just minutes, and can work for sending 50 or 50,000 messages per day.</h4>
+          <img  class="feature-icon" 
+                src="{{ feature.icon }}" 
+                alt="{{ feature.subheader }}">
+          <h3>
+            {{ feature.header }}
+          </h3>
+          <h4>
+            {{ feature.subheader }}
+          </h4>
         </div>
-      </div>
-
+      </div>      
+      <!-- This loop ensures that <hr> doesn't show up on the last element. -->
+      {% if forloop.index < 3  %}
       <hr class="feature-break">
-      
-      <div class="feature">
-        <img class="feature-img" src="{{ site.baseurl }}/img/middle/knows-what.png" alt=""> 
-        <div class="feature-text">
-          <img class="feature-icon" src="{{ site.baseurl }}/img/middle/i_heart.png" alt="">
-          <h3>Nova knows what drives engagement</h3>
-          <h4>Based on historical data, Nova knows exactly what messages resonate with what individuals. Nova puts this data to work to create a message that is optimized for effectiveness.</h4>
-        </div> 
-      </div>
+      {% endif %}
 
-      <hr class="feature-break">
+      {% endfor %}
 
-      <div class="feature">
-        <img class="feature-img" src="{{ site.baseurl }}/img/middle/engage-people.png" alt="">
-        <div class="feature-text">
-          <img class="feature-icon" src="{{ site.baseurl }}/img/middle/i_brain.png" alt="">
-          <h3>Timing matters</h3>
-          <h4>When you send a message has a dramatic impact on a recipients' engagement. Nova knows when your prospects are active and most likely to engage with your messaging.</h4>
-        </div>
-      </div>
     </div>
 
   </div>
 </div>    
 
+<!-- @kian: had to separate this one out for dumb CSS reasons -->
 <div class="wrapper wrapper-testimonials-intro">
   <h1 class="header _ta-center">Trusted by companies everywhere. </h1>
 </div>
 
 <div class="wrapper-slick2">
   
+  <!-- This loop accesses /_data/testimonials.yml to populate the slider with case studies  -->
+  {% for testimonial in site.data.testimonials %}
   <div>
     <div class="wrapper wrapper-testimonials">
       <div class="testimonial">
+        
         <div class="testimonial-user">
-          <img class="_margin-auto _img-round" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg" alt="">
+          <img  class="_img-round _margin-auto" 
+                src="{{ testimonial.image }}" 
+                alt="{{ testimonial.name }}">
           <p class="_f-white">
-            <span class="_f-bold">Shirley Temple, </span>Customer Advocate
+            <span class="_f-bold">
+              {{ testimonial.name }}, </span>{{ testimonial.position }}
           </p>
-          <img class="testimonial-logo _margin-auto" src="http://storefront.nr-assets.net/assets/newrelic/source/NewRelic-logo-bug-clr-w.png">
+          <img  class="testimonial-logo _margin-auto" 
+                src="{{ testimonial.logo }}"
+                alt="{{ testimonial.company }}">
         </div>
           
         <p class="testimonial-quote _f-white">
-          "Nova has dramatically improved the productivity of our sales development team. Nova's product doesn't even seem possible until you see it in action, and then you wondered how you were ever doing things differently."
+          "{{ testimonial.quote }}"
         </p>
         
-        <!--AHHHHH FIX THIS BULLSHIT -->
-        <div style="justify-content: space-around;" class="testimonial-metrics-wrapper _flex _flex-row">  
+        <div class="testimonial-metrics-wrapper _flex _flex-row">
           <div class="testimonial-metric _flex _flex-column">
-            <img src="{{ site.baseurl }}/img/testimonials/1_open.png" alt="">
+            <img  src="{{ testimonial.graph1 }}" 
+                  alt="{{ testimonial.graph1alt }}">
           </div>
 
           <div class="testimonial-metric _flex _flex-column">
-            <img src="{{ site.baseurl }}/img/testimonials/1_demo.png" alt="">
+            <img  src="{{ testimonial.graph2 }}" 
+                  alt="{{ testimonial.graph2alt }}">
           </div>  
 
           <div class="testimonial-metric _flex _flex-column">
-            <img src="{{ site.baseurl }}/img/testimonials/1_response.png" alt="">
+            <img  src="{{ testimonial.graph3 }}" 
+                  alt="{{ testimonial.graph3alt }}">
           </div>  
         </div>
 
       </div>
     </div>  
   </div>
+  {% endfor %}
 
 </div>
-
 
 
 <div class="wrapper wrapper-cta">
   <div class="section section-cta _ta-center">
-    <h1 class="header _f-white">Get early access to Nova.</h1>
-    <button type="button" class="join-waitlist btn-primary btn-cta">Join the waitlist</button>
+    <h1 class="header _f-white">
+      Get early access to Nova.
+    </h1>
+    <button type="button" class="btn-primary btn-cta join-waitlist">
+      Join the waitlist
+    </button>
  </div>
 </div>
 
-<script>
-$(document).ready(function() {
-    $('.btn-primary').click(function() {
-      $(".tooltipster-base").hide(); 
-      $('.wrapper-slick').slick('slickPause');
-    }); 
-
-    $('#ttip-location').tooltipster({
-        content: $('<p>Nova crafts custom introductory paragraphs for each of your recipients.</p>'),
-        multiple: true, 
-        interactive: true,
-    });
-
-    $('#ttip-subject').tooltipster({
-        content: $('<p>Nova creates individualized subject lines that get opens.</p>'),
-        multiple: true, 
-        interactive: true,
-    });
-
-    $('#ttip-timestamp').tooltipster({
-        content: $('<p>Nova knows when each of your recipients are active and sends your emails at the best possible time.</p>'),
-        multiple: true, 
-        interactive: true,
-    });
-});
-</script>
-
-<script>
-$('.wrapper-slick').on('init', function(event, slick){
-  $('.arrow-prev').addClass('arrow-inactive');
-});
-
-$('.wrapper-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  switch (currentSlide) {
-    case 0: 
-      $('#ttip-location').tooltipster('hide');
-      break;
-    case 1: 
-      $('#ttip-subject').tooltipster('hide');
-      break;
-    case 2: 
-      $('#ttip-timestamp').tooltipster('hide');
-      break;
-  }
-});
-
-$('.wrapper-slick').on('afterChange', function(event, slick, currentSlide, nextSlide){
-  switch (currentSlide) {
-    case 0: 
-      $('#ttip-location').tooltipster('show');
-      $('.arrow-prev').addClass('arrow-inactive');
-      $('.arrow-next').removeClass('arrow-inactive');
-      break;
-    case 1: 
-      $('#ttip-subject').tooltipster('show');
-      $('.arrow-prev').removeClass('arrow-inactive');
-      $('.arrow-next').removeClass('arrow-inactive');
-      break;
-    case 2: 
-      $('#ttip-timestamp').tooltipster('show');
-      $('.arrow-next').addClass('arrow-inactive');
-      $('.arrow-prev').removeClass('arrow-inactive');
-      break;
-  }
-});
-        
-
-  $(window).load(function() {
-    $("#ttip-location").tooltipster('show');
-  });
-</script>
-
+<script type="text/javascript" src="{{ site.baseurl }}/js/initialize_tooltips.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/initialize_slider.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/retina.min.js"></script>
