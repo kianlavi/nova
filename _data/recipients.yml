@@ -2,7 +2,7 @@
   lastname: Castro
   title: Benefits Administrator
   company: KCR
-  image: https://s3.amazonaws.com/uifaces/faces/twitter/jadlimcaco/128.jpg
+  image: /img/hero/user_patrick.jpg
   personalization: Hey, I see that you used to live in Long Beach. Southern California is really a beautiful area. Did you ever go to see the Queen Mary?
   personalizationimage: /img/hero/loca_ca.svg
   personalizationimagealt: From Long Beach, CA
@@ -15,7 +15,7 @@
   lastname: Kelly
   title: VP of HR
   company: LoudSound
-  image: /nova/img/hero/user_lindsey.png
+  image: /img/hero/user_lindsey.png
   personalization: Congrats on your volunteer work with Hands On Bay Area! Do you still work with the organization? Great to see people doing good work to help out the community here.
   personalizationimage: /img/hero/pson_vol.png
   personalizationimagealt: Volunteer at Hands on Bay Area
@@ -26,7 +26,7 @@
   lastname: Howell
   title: Director of Talent
   company: OldRelic
-  image: https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg
+  image: /img/hero/user_shirley.jpg
   personalization: Great to see a fellow Stanford graduate going on to do such great things. I just graduated in 2011. Go Cardinal!
   personalizationimage: /img/hero/simi_school.svg
   personalizationimagealt: Went to the same school

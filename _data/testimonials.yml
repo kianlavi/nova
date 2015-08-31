@@ -1,8 +1,8 @@
-- image: https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg
+- image: /img/testimonials/1_shirley.jpg
   name: Shirley Temple
   position: Customer Advocate
   company: New Relic
-  logo: http://storefront.nr-assets.net/assets/newrelic/source/NewRelic-logo-bug-clr-w.png
+  logo: /img/testimonials/1_oldrelic.png
   quote: Nova has dramatically improved the productivity of our sales development team. Nova's product doesn't even seem possible until you see it in action, and then you wondered how you were ever doing things differently.
   graph1: /img/testimonials/1_open.png
   graph1alt: Open Rate +200%

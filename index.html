@@ -89,7 +89,7 @@ layout: home
 
           <div class="message-recipient _hide-mobile">
             <img  class="img-recipient _img-round" 
-                  src="{{ recipient.image }}" 
+                  src="{{ site.baseurl }}{{ recipient.image }}" 
                   alt="{{ recipient.firstname }} {{ recipient.lastname }}">
             <p class="message-recipient-name">
               {{ recipient.firstname }} {{ recipient.lastname }}
@@ -124,11 +124,11 @@ layout: home
       {% for feature in site.data.features %}
       <div class="feature">
         <img    class="feature-img" 
-                src="{{ feature.image }}" 
+                src="{{ site.baseurl }}{{ feature.image }}" 
                 alt="{{ feature.header }}">
         <div class="feature-text">
           <img  class="feature-icon" 
-                src="{{ feature.icon }}" 
+                src="{{ site.baseurl }}{{ feature.icon }}" 
                 alt="{{ feature.subheader }}">
           <h3>
             {{ feature.header }}
@@ -165,14 +165,14 @@ layout: home
         
         <div class="testimonial-user">
           <img  class="_img-round _margin-auto" 
-                src="{{ testimonial.image }}" 
+                src="{{ site.baseurl }}{{ testimonial.image }}" 
                 alt="{{ testimonial.name }}">
           <p class="_f-white">
             <span class="_f-bold">
               {{ testimonial.name }}, </span>{{ testimonial.position }}
           </p>
           <img  class="testimonial-logo _margin-auto" 
-                src="{{ testimonial.logo }}"
+                src="{{ site.baseurl }}{{ testimonial.logo }}"
                 alt="{{ testimonial.company }}">
         </div>
           
@@ -182,17 +182,17 @@ layout: home
         
         <div class="testimonial-metrics-wrapper _flex _flex-row">
           <div class="testimonial-metric _flex _flex-column">
-            <img  src="{{ testimonial.graph1 }}" 
+            <img  src="{{ site.baseurl }}{{ testimonial.graph1 }}" 
                   alt="{{ testimonial.graph1alt }}">
           </div>
 
           <div class="testimonial-metric _flex _flex-column">
-            <img  src="{{ testimonial.graph2 }}" 
+            <img  src="{{ site.baseurl }}{{ testimonial.graph2 }}" 
                   alt="{{ testimonial.graph2alt }}">
           </div>  
 
           <div class="testimonial-metric _flex _flex-column">
-            <img  src="{{ testimonial.graph3 }}" 
+            <img  src="{{ site.baseurl }}{{ testimonial.graph3 }}" 
                   alt="{{ testimonial.graph3alt }}">
           </div>  
         </div>
