@@ -629,6 +629,8 @@ h4 { font-size: 1.25rem; }
 }
 
 .testimonial-metrics-wrapper {
+    justify-content: space-around; 
+
     @include media-query($on-palm) {
         flex-direction: column;  -webkit-flex-direction: column;
     }
