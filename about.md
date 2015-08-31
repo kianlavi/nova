@@ -1,11 +1,11 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: Designed by Kian Lavi
+permalink: /_k/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+This website was lovingly designed by Kian Lavi in August of 2015. Find out more at [by.kianlavi.com](by.kianlavi.com).
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+You can also find the source code for this website at [github.com/kianlavi/nova](github.com/kianlavi/nova)
 
 You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
