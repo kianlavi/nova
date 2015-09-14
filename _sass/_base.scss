@@ -493,7 +493,7 @@ hr {
 }
 
 .testimonial-metrics-wrapper {
-    justify-content: space-around; 
+    justify-content: space-around; -webkit-justify-content: space-around; 
 
     @include media-query($on-palm) {
         flex-direction: column;  -webkit-flex-direction: column;
