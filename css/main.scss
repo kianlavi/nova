@@ -70,16 +70,16 @@ $accent-yellow:     #FFCC42;
 ._f-white { color: $white; }
 ._f-bold { font-weight: 600; }
 
-._flex { display: flex; }
-._flex-row { flex-direction: row; }
-._flex-row-reverse { flex-direction: row-reverse; }
-._flex-column { flex-direction: column; }
-._flex-column-reverse { flex-direction: column-reverse; }
+._flex { display: flex; display: -webkit-flex; }
+._flex-row { flex-direction: row; -webkit-flex-direction: row; }
+._flex-row-reverse { flex-direction: row-reverse; -webkit-flex-direction: row-reverse; }
+._flex-column { flex-direction: column; -webkit-flex-direction: column;  }
+._flex-column-reverse { flex-direction: column-reverse; -webkit-flex-direction: column-reverse; }
 
-._flex-1 { flex: 1; }
-._flex-2 { flex: 2; }
-._flex-3 { flex: 3; }
-._flex-4 { flex: 4; }
+._flex-1 { -webkit-flex: 1; flex: 1; }
+._flex-2 { -webkit-flex: 2; flex: 2; }
+._flex-3 { -webkit-flex: 3; flex: 3; }
+._flex-4 { -webkit-flex: 4; flex: 4; }
 
 ._img-round { border-radius: 50%; }
 
